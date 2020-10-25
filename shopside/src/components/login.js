@@ -9,8 +9,8 @@ function Login() {
     </div>
      <div className = 'container'>
       <div className = 'row'>
-        <div className = 'col'>
-          <div className = 'card'>
+        <div className = 'col login'>
+          <div className = 'card login'>
           <p>User Name</p>
           <input></input>
           <p> Password</p>
@@ -18,8 +18,8 @@ function Login() {
           </div>
           <button className = "submit">Submit</button>
         </div>
-        <div className = 'col'>
-          <div className = 'card'>
+        <div className = 'col login'>
+          <div className = 'card login'>
             <div className = 'card-body'>
               <div className = 'card-title'>
 
