@@ -1,0 +1,10 @@
+.col{
+    border-style: solid;
+    border-color: gray;
+    margin: 10px;
+    padding : 10px;
+}
+
+.card{
+    border-style: none;
+}
