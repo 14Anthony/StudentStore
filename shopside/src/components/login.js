@@ -1,4 +1,5 @@
 import React from "react";
+import "../components/style/login.css"
 // import Content from "../components/Content";
 
 function Login() {
@@ -9,15 +10,24 @@ function Login() {
      <div className = 'container'>
       <div className = 'row'>
         <div className = 'col'>
-          <div className = "card">
+          <div className = 'card'>
           <p>User Name</p>
           <input></input>
           <p> Password</p>
           <input></input>
           </div>
+          <button className = "submit">Submit</button>
         </div>
         <div className = 'col'>
+          <div className = 'card'>
+            <div className = 'card-body'>
+              <div className = 'card-title'>
+
+
           <a href= "#"> Click here if you need to sign up</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
