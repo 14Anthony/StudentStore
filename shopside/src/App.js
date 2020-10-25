@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <main>
+      <main className='py-3' >
         <Container>
           <h3>
             Welcome to storeFront
