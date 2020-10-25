@@ -28,7 +28,7 @@ const products = [
     {
         _id: '3',
         name: 'Zackariah',
-        image: '/Photos/Zackaria.jpg',
+        image: '/Photos/zackariah.jpg',
         description:
             'Zackariah has the best bicycle hat for his computer',
         motto: 'Beard no Beard, I am here',
