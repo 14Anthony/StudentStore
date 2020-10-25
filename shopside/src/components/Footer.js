@@ -1,10 +1,17 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Col, Row } from 'react-bootstrap'
 
 const Footer = () => {
     return (
         <footer>
-            ATZF -- footer component
+            <Container>
+                <Row>
+
+                    <Col className='text-center py-3'>
+                        storeFront
+                    </Col>
+                </Row>
+            </Container>
         </footer>
     )
 }
