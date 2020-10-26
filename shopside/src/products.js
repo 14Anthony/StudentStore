@@ -9,7 +9,7 @@ const products = [
         category: 'Project three Teammate',
         salary: "1,000,000",
         countInStock: 1,
-        rating: 4.5,
+        rating: 1.5,
         numReviews: 12,
     },
     {
@@ -22,7 +22,7 @@ const products = [
         category: 'Project three Teammate',
         salary: "1,000,000",
         countInStock: 1,
-        rating: 4.5,
+        rating: 2.5,
         numReviews: 12,
     },
     {
@@ -35,7 +35,7 @@ const products = [
         category: 'Project three Teammate',
         salary: "1,000,000",
         countInStock: 1,
-        rating: 4.5,
+        rating: 3.5,
         numReviews: 12,
     },
     {
