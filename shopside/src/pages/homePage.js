@@ -1,4 +1,5 @@
 import React from 'react'
+// make sure to check to see if you imported each of the specific components you need.
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import products from '../products'

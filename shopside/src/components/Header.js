@@ -1,4 +1,5 @@
 import React from 'react'
+// make sure to check to see if you imported each of the specific components you need.
 import { Container, Nav, Navbar } from 'react-bootstrap'
 
 // so if you import es7  you can create arrow functions for export immediately, by typingin racfe 

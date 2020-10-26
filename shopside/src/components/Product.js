@@ -1,4 +1,5 @@
 import React from 'react'
+// make sure to check to see if you imported each of the specific components you need.
 import { Card } from 'react-bootstrap'
 import Rating from './Rating'
 
