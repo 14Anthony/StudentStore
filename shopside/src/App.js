@@ -24,7 +24,7 @@ const App = () => {
           <Route
             path='/product/:id'
             component={productPage}
-            exact />
+          />
           {/* 
           <Route
             path='/'

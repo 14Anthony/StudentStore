@@ -39,7 +39,7 @@ const products = [
         numReviews: 12,
     },
     {
-        _id: '',
+        _id: '4',
         name: 'Anthony',
         image: '/Photos/anthony.jpg',
         description:

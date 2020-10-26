@@ -1,4 +1,5 @@
 import React from 'react'
+import { LinkContainer } from 'react-router-bootstrap'
 // make sure to check to see if you imported each of the specific components you need.
 import { Container, Nav, Navbar } from 'react-bootstrap'
 
@@ -13,16 +14,23 @@ const Header = () => {
 
             <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
                 <Container>
-                    <Navbar.Brand href="/">storeFront</Navbar.Brand>
+                    <LinkContainer to='/'>
+
+                        <Navbar.Brand href="/">storeFront</Navbar.Brand>
+                        {/* found how we can use the bootstrap router containers, using the link wrapping of a full container. */}
+                    </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
 
                             {/* fontawesome for the cart, and users */}
 
-                            <Nav.Link href="/cart"><i className='fas fa-shopping-cart'></i>CART</Nav.Link>
-
-                            <Nav.Link href="/login"><i className='fas fa-user'></i>LOGIN</Nav.Link>
+                            <LinkContainer to='/CART'>
+                                <Nav.Link><i className='fas fa-shopping-cart'></i>CART</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to='/LOGIN'>
+                                <Nav.Link ><i className='fas fa-user'></i>LOGIN</Nav.Link>
+                            </LinkContainer>
                         </Nav>
 
                     </Navbar.Collapse>
