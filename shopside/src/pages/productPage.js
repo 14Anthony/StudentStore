@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import products from '../products'
 
@@ -14,7 +14,7 @@ const productPage = ({ match }) => {
     return (
         <>
             {/* using react dom to get the buttion, linked */}
-            <Link className='btn btn-dark my-3' to='/'>
+            <Link className='btn btn-secondary my-3' to='/'>
                 Back
         </Link>
             {/* I need to pull in the image, and the product information using the current list from products.js */}
@@ -25,10 +25,50 @@ const productPage = ({ match }) => {
 
                 </Col>
                 <Col md={3}>
-                    <ListGroup>
+                    <ListGroup variant='flush'>
                         <ListGroup.Item>
-                            <h3>{product.name}</h3>
+                            <h3><strong>{product.name}</strong></h3>
                         </ListGroup.Item>
+                        <ListGroup.Item>
+                            <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            Price:  ${product.price}
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <strong> Description:  {product.description}</strong>
+                        </ListGroup.Item>
+                    </ListGroup>
+                </Col>
+                <Col md={3}>
+                    <ListGroup >
+                        <ListGroup.Item>
+                            <Row>
+                                <Col>
+                                    Salary:
+                                </Col>
+                                <Col>
+                                    <strong>${product.price}</strong>
+                                </Col>
+                            </Row>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <Row>
+                                <Col>
+                                    Status:
+                                </Col>
+                                <Col>
+                                    {product.countInStock > 0 ? 'Available for Hire' : 'Out of Stock'}
+                                </Col>
+                            </Row>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <Button className='btn-block' type='button' disabled={product.countInStock === 0}>
+                                Add To Cart
+                            </Button>
+                        </ListGroup.Item>
+
                     </ListGroup>
                 </Col>
 
