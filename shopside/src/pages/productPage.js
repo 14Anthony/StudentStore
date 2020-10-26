@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
-import products from '../products'
+// import products from '../products'
+import axios from 'axios'
 
 
-const productPage = ({ match }) => {
+const ProductPage = ({ match }) => {
 
     //Need to find a way to capture the id the product from the params. maybe match....?  find.... findall???I can't remember.........\\
 
-    const product = products.find(p => p._id === match.params.id)
+    // const product = products.find(p => p._id === match.params.id) moving over to the back end .......like I just did on homePage, 
+    const [product, setProduct] = useState({})
+    // same functionality from the homePage.js file, as I mimick.
+    useEffect(() => {
+        const getProduct = async () => {
+            const { data } = await axios.get(`/api/products/${match.params.id}`)
 
+            setProduct(data)
+        }
+        getProduct()
+    }, [])
     return (
         <>
             {/* using react dom to get the buttion, linked */}
@@ -77,4 +87,4 @@ const productPage = ({ match }) => {
     )
 }
 
-export default productPage
+export default ProductPage
