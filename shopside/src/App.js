@@ -20,7 +20,7 @@ const App = () => {
             exact />
           {/* used the below routing patterns for future connections to the grid. */}
 
-          <Route
+          {/* <Route
             path='/'
             component={}
             exact />
@@ -38,7 +38,7 @@ const App = () => {
           <Route
             path='/'
             component={}
-            exact />
+            exact /> */}
         </Container>
       </main>
       <Footer />
