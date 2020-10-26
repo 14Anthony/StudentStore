@@ -44,7 +44,7 @@ const ProductPage = ({ match }) => {
 
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            Price:  ${product.price}
+                            Salary:  ${product.salary}
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <strong> Description:  {product.description}</strong>
