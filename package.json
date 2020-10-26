@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/14Anthony/StudentStore/issues"
   },
-  "homepage": "https://github.com/14Anthony/StudentStore#readme"
+  "homepage": "https://github.com/14Anthony/StudentStore#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
