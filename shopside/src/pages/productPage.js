@@ -20,7 +20,7 @@ const productPage = ({ match }) => {
             {/* I need to pull in the image, and the product information using the current list from products.js */}
             <Row>
                 <Col md={6}>
-
+                    {/* the name keeps popping out of the cards....how do I fix.??? */}
                     <Image src={product.image} alt={product.name} fluid />
 
                 </Col>
