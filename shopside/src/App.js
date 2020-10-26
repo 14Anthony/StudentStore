@@ -18,6 +18,7 @@ const App = () => {
             path='/'
             component={HomePage}
             exact />
+          {/* used the below routing patterns for future connections to the grid. */}
 
           <Route
             path='/'
