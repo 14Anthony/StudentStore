@@ -6,3 +6,5 @@
 .env.test.local
 .env.prodution.local
 npm-debug.log*
+
+node_modules
