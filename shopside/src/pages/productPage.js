@@ -20,7 +20,7 @@ const ProductPage = ({ match }) => {
             setProduct(data)
         }
         getProduct()
-    }, [])
+    }, [match])
     return (
         <>
             {/* using react dom to get the buttion, linked */}

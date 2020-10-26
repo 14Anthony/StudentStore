@@ -1,5 +1,8 @@
 const express = require('express');
+const dotenv = require('dotenv')
 const products = require('./DB/products')
+
+dotenv.config()
 
 const app = express()
 
@@ -14,5 +17,7 @@ app.get('/api/products/:id', (req, res, next) => {
     const product = products.find(p => p._id === req.params.id)
     res.json(product)
 })
+
+const PORT = process.env.PORT || 8800
 
 app.listen(8800)
