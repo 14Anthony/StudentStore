@@ -1,6 +1,23 @@
 import React from "react";
-import "../components/style/login.css"
-// import Content from "../components/Content";
+import "../../components/style/login.css"
+import API from '../../utils/API'
+// import Content fr
+
+
+const setUser = (userCred)=>{
+  
+  return userCred;
+}
+const useUser = () =>{
+  
+}
+
+const checkUser = (user) =>{
+    API.login(user)
+    .then(res => setUser(res))
+    .catch(err => console.log(err))
+}
+
 
 function Login() {
   return (
@@ -14,7 +31,7 @@ function Login() {
           <p>User Name</p>
           <input></input>
           <p> Password</p>
-          <input></input>
+          <input type = "password"></input>
           </div>
           <button className = "submit">Submit</button>
         </div>
