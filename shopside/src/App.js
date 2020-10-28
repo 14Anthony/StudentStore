@@ -11,7 +11,7 @@ import productPage from './pages/productPage'
 // I deleted the HomePage tag, and imported route, given the path = "tosomepath"  it will render component={pulling in somecomponent}  then make sure you have "exact" path. if you are
 const App = () => {
 
- 
+  const userStatus = true;
 
   return (
     <Router>
@@ -32,7 +32,9 @@ const App = () => {
            
           <Route
             path='/LOGIN'
-            component={Login}
+            render= {(props) =>(
+              <Login userStatus ={userStatus} />
+            )}
             exact />
 
           {/* <Route
