@@ -40,10 +40,11 @@ const App = () => {
             )}
             exact />
 
-          {/* <Route
-            path='/'
-            component={}
+           <Route
+            path='/admin'
+            component={AdminPage}
             exact />
+          {/*
 
           <Route
             path='/'
