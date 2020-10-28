@@ -6,13 +6,6 @@ import Home from "../../pages/homePage"
 const LoginHandler = ({userStatus}) => {
      console.log(userStatus);
     
-    
-    // if user exists show login if user does not exist sent them to the login form
-    // if (x){
-    //     return <Login />
-    // }
-    // return <SignUp />
-
     switch(userStatus){
         case true: return <Home />
         break;
