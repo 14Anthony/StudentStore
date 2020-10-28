@@ -3,6 +3,10 @@ import "../../components/style/login.css"
 // import Content from "../components/Content";
 
 function SignUp() {
+  // const [useUser, setUser] = useState({
+  //   exists: false,
+  // });
+
   return (
     <div>
     <div className = 'container'>

@@ -5,11 +5,13 @@ import API from '../../utils/API'
 
 
 const setUser = (userCred)=>{
+
   
+
   return userCred;
 }
-const useUser = () =>{
-  
+const getUser = () =>{
+    return setUser();
 }
 
 const checkUser = (user) =>{
@@ -20,6 +22,11 @@ const checkUser = (user) =>{
 
 
 function Login() {
+
+  // const [useUser, setUser] = useState({
+  //   exists: false,
+  // });
+
   return (
     <div>
     <div className = 'container'>
