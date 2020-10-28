@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext} from 'react'
 // make sure to check to see if you imported each of the specific components you need.
 import { Container } from 'react-bootstrap'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -7,13 +7,15 @@ import Footer from './components/Footer'
 import Login from './pages/LoginHandler/LoginHandler';
 import HomePage from './pages/homePage'
 import productPage from './pages/productPage'
+import Context from "./utils/context.js"
 import AdminPage from "./pages/AdminPage"
 
 // I deleted the HomePage tag, and imported route, given the path = "tosomepath"  it will render component={pulling in somecomponent}  then make sure you have "exact" path. if you are
 const App = () => {
-
- 
-
+  const { userStatus } = useContext(Context);
+  
+  console.log(Context.userStatus);
+  
   return (
     <Router>
 
@@ -33,13 +35,16 @@ const App = () => {
            
           <Route
             path='/LOGIN'
-            component={Login}
+            render= {() =>(
+              <Login userStatus ={userStatus} />
+            )}
             exact />
 
-          {/* <Route
-            path='/'
-            component={}
+           <Route
+            path='/admin'
+            component={AdminPage}
             exact />
+          {/*
 
           <Route
             path='/'
