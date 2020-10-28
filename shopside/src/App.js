@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/homePage'
 import productPage from './pages/productPage'
+import AdminPage from "./pages/AdminPage"
 
 // I deleted the HomePage tag, and imported route, given the path = "tosomepath"  it will render component={pulling in somecomponent}  then make sure you have "exact" path. if you are
 const App = () => {
@@ -25,12 +26,12 @@ const App = () => {
             path='/product/:id'
             component={productPage}
           />
-          {/* 
+          
           <Route
-            path='/'
-            component={}
+            path='/admin'
+            component={AdminPage}
             exact />
-
+{/*
           <Route
             path='/'
             component={}
