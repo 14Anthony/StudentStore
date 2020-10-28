@@ -5,7 +5,7 @@ import { Container, Col, Row } from 'react-bootstrap'
 const Footer = () => {
     return (
         <footer>
-            <Container>
+            <Container className="fixed-bottom">
                 <Row>
 
                     <Col className='text-center py-3'>
