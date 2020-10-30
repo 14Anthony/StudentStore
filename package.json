@@ -6,7 +6,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node backend/server",
+    "start": "node backend/server"
   
   },
   "repository": {
