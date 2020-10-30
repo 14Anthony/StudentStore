@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "description": "project three completing an react app, using authentication, MERN stack, and MVC modeling",
   "main": "index.js",
-  "type":"module",
+  
   "scripts": {
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "build": " babel /backend -d build"
   },
   "repository": {
     "type": "git",
