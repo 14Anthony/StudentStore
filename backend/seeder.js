@@ -4,7 +4,7 @@ import users from './DB/users.js'
 import products from './DB/products.js'
 import User from './models/userModels.js'
 import Product from './models/productModel.js'
-import Order from './models/orderModels.js'
+import Order from './models/orderModel.js'
 
 import connectDB from './config/db.js'
 
@@ -25,7 +25,7 @@ const importData = async () => {
         const adminUser = createUser[0]._id
 
         const studentProducts = products.map(product => {
-            return { ...product, user: adminUser }
+            return { ...products, user: adminUser }
         })
 
         await Product.insertMany(studentProducts)

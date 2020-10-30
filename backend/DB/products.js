@@ -3,6 +3,7 @@ const products = [
 
         name: 'Travis',
         image: '/Photos/travis.jpg',
+        brand: 'Newbies',
         description:
             'Travis has the most memory on his computer',
         motto: 'Beard no Beard, I am here',
@@ -16,6 +17,7 @@ const products = [
 
         name: 'Frank ',
         image: '/Photos/frank.jpg',
+        brand: 'Newbies',
         description:
             'Frank has the worst internet for his computer',
         motto: 'no Beard, I am here',
@@ -29,6 +31,7 @@ const products = [
 
         name: 'Zackariah',
         image: '/Photos/zackariah.jpg',
+        brand: 'Newbies',
         description:
             'Zackariah has the best bicycle hat for his computer',
         motto: 'Beard no Beard, I am here',
@@ -42,6 +45,7 @@ const products = [
 
         name: 'Anthony',
         image: '/Photos/anthony.jpg',
+        brand: 'Newbies',
         description:
             'Anthony has a beanbag chair next to his computer',
         motto: 'Beard no Beard, I am here',

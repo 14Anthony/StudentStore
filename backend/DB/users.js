@@ -29,7 +29,7 @@ const users = [
     {
         name: 'Frank',
         email: 'travis@travis.com',
-        password: "#",
+        password: bcrypt.hashSync('123456', 10),
         isAdmin: true
 
     },
