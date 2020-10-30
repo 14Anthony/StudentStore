@@ -7,8 +7,8 @@
   "type": "module",
   "scripts": {
     "start": "node backend/server",
-    "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder-d"
+    "data:import": "node backend/seeder.js",
+    "data:destroy": "node backend/seeder.js -d"
   },
   "repository": {
     "type": "git",
