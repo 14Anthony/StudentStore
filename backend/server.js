@@ -12,11 +12,17 @@ connectDB()
 
 const app = express()
 
+
+
 app.get('/', (req, res, next) => {
     res.send('Backend Begins...')
 })
 
 app.use('/api/products', productRoutes)
+
+app.use()
+
+app.use()
 
 
 const PORT = process.env.PORT || 8800

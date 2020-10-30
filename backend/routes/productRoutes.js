@@ -14,7 +14,7 @@ router.get('/', asyncHandler(async (req, res, next) => {
     res.json(products)
 }))
 // the is going to grab single student
-//  GET to /api/products
+//  GET to /api/products/:id
 // this is access for a public routes
 
 
