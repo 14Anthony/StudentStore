@@ -41,12 +41,7 @@ const productSchema = mongoose.Schema({
     },
 
 
-    category: {
 
-        type: String,
-        required: true,
-
-    },
     description: {
 
         type: String,
@@ -57,6 +52,26 @@ const productSchema = mongoose.Schema({
 
         type: String,
         required: false,
+
+    },
+    category: {
+
+        type: String,
+        required: true,
+
+    },
+    salary: {
+
+        type: Number,
+        required: true,
+        defaut: 0
+
+    },
+    countInStock: {
+
+        type: Number,
+        required: true,
+        defaut: 0
 
     },
     review: [reviewSchema],
@@ -74,20 +89,8 @@ const productSchema = mongoose.Schema({
         defaut: 0
 
     },
-    salary: {
 
-        type: Number,
-        required: true,
-        defaut: 0
 
-    },
-    countInStock: {
-
-        type: Number,
-        required: true,
-        defaut: 0
-
-    },
 }, {
     timestamps: true
 
