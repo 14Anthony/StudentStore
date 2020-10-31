@@ -1,3 +1,4 @@
+  
 {
   "name": "studentstore",
   "proxy": "http://127.0.0.1:8800",
@@ -6,8 +7,12 @@
   "main": "index.js",
   "type":"module",
   "scripts": {
-    "start": "node backend/server.js"
-  },
+
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
+ },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/14Anthony/StudentStore.git"
@@ -19,8 +24,10 @@
   },
   "homepage": "https://github.com/14Anthony/StudentStore#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
     "mongoose": "^5.10.11",
     "nodemon": "^2.0.6"
   }
