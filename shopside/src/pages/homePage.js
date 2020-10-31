@@ -1,45 +1,33 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react'
+// make sure to check to see if you imported each of the specific components you need.
+import { Row, Col, Container } from 'react-bootstrap'
 import Product from '../components/Product'
+// import products from '../products'moving the products db to the backend. trying to get it to connect, possible an async await with axios.
 import axios from 'axios'
-import { listProducts } from '../actions/productActions'
-
-
 const HomePage = () => {
-    const dispatch = useDispatch()
-
-    const productList = useSelector(state => state.productList)
-    const { loading, error, products } = productList
-
-
+    //getter and setters.
+    const [products, setProducts] = useState([])
+    // axios request....useEffect, async await
     useEffect(() => {
-        dispatch(listProducts())
-
-
-    }, [dispatch])
-
+        const getProducts = async () => {
+            const { data } = await axios.get('/api/products')
+            setProducts(data)
+        }
+        getProducts()
+    }, [])
     return (
-        <>
-            <h1>
-                Most Recent BootCamp Graduates
-        </h1>
-
-            {loading
-                ? (<h2>Loading ...</h2>)
-                : error
-                    ? (<h3>{error}</h3>)
-                    : (<Row>
-                        {products.map((product) => {
-                            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                                <Product product={product} />
-                            </Col>
-                        })}
-                    </Row>)}
-
-        </>
-
+        <Container>
+            <h1>The most recent Bootcamp Graduates</h1>
+            <Row>
+                {products.map(product => (
+                    // this needs to be a mobile first application so maybe we should just keep it consistent throughout, I am putting this here for copy and paste needs we will have the small devices take up 12 column, medium devices we can take up 6 , large screens take up four columns and lets have extra large screens take up 3 
+                    <Col sm={12} md={6} lg={4} xl={3}>
+                        {/* we will need somekind of component that renders just the photos as we loop thru the products.js */}
+                        <Product product={product} />
+                    </Col>
+                ))}
+            </Row>
+        </Container>
     )
 }
-
 export default HomePage
