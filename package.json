@@ -4,13 +4,14 @@
   "version": "1.0.0",
   "description": "project three completing an react app, using authentication, MERN stack, and MVC modeling",
   "main": "index.js",
-  "type": "module",
+  "type":"module",
   "scripts": {
+
     "start": "node backend/server",
     "server": "nodemon backend/server",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d"
-  },
+ },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/14Anthony/StudentStore.git"
