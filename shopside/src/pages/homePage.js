@@ -22,6 +22,8 @@ const HomePage = () => {
 
     return (
         <>
+
+
             <h1>The most recent Bootcamp Graduates</h1>
             <Row>
 
@@ -40,6 +42,9 @@ const HomePage = () => {
                 ))}
 
             </Row>
+
+
+
 
         </>
     )
