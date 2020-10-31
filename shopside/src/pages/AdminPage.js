@@ -1,13 +1,17 @@
-import React from 'react'
-import FormCard from "../components/FormCard"
-import { Container, Col, Row} from 'react-bootstrap'
+import React from "react";
+import Console from "../components/Console";
+import Sidebar from "../components/Sidebar";
+import { Container, Col, Row } from "react-bootstrap";
+
 
 const AdminPage = () => {
-    return (
-        <div>
-            <FormCard/>
-        </div>
-    )
-}
+  return (
+    <div className="d-flex" id="wrapper">
+      <Sidebar />
 
-export default AdminPage
+      <Console />
+    </div>
+  );
+};
+
+export default AdminPage;

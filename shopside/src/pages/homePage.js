@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 // make sure to check to see if you imported each of the specific components you need.
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 import Product from '../components/Product'
 // import products from '../products'moving the products db to the backend. trying to get it to connect, possible an async await with axios.
 import axios from 'axios'
@@ -21,7 +21,7 @@ const HomePage = () => {
     }, [])
 
     return (
-        <>
+        <Container>
             <h1>The most recent Bootcamp Graduates</h1>
             <Row>
 
@@ -41,7 +41,7 @@ const HomePage = () => {
 
             </Row>
 
-        </>
+        </Container>
     )
 }
 
