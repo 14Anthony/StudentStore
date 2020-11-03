@@ -1,4 +1,6 @@
 import React from "react";
+import { LinkContainer } from 'react-router-bootstrap'
+import { Nav } from 'react-bootstrap'
 import "../../components/style/login.css"
 import API from '../../utils/API'
 // import Content fr
@@ -47,8 +49,10 @@ function Login() {
             <div className = 'card-body'>
               <div className = 'card-title'>
 
-
-          <a href= "#"> Click here if you need to sign up</a>
+              <LinkContainer to='/signup'>
+                                <Nav.Link ><i className='fas fa-user'></i>Click Here If You Need To Create A User</Nav.Link>
+              </LinkContainer>
+        
               </div>
             </div>
           </div>
