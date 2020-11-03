@@ -28,13 +28,9 @@ const Header = () => {
                             <LinkContainer to='/CART'>
                                 <Nav.Link><i className='fas fa-shopping-cart'></i>CART</Nav.Link>
                             </LinkContainer>
-<<<<<<< HEAD
-                            <LinkContainer to='/login'>
-=======
 
 
                             <LinkContainer to='/LOGIN'>
->>>>>>> 28b559c135d84d58056791f8db7e80895ed98e9b
                                 <Nav.Link ><i className='fas fa-user'></i>LOGIN</Nav.Link>
                             </LinkContainer>
 
