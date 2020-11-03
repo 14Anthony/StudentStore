@@ -59,7 +59,7 @@ const ProductPage = ({ match }) => {
                                     Salary:
                                 </Col>
                                 <Col>
-                                    <strong>${product.price}</strong>
+                                    <strong>${product.salary}</strong>
                                 </Col>
                             </Row>
                         </ListGroup.Item>

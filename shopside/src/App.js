@@ -23,8 +23,7 @@ const App = () => {
 
 
       <Header />
-      <main className='py-3' >
-        <Container>
+      
           <Route
             path='/'
             component={HomePage}
@@ -46,18 +45,15 @@ const App = () => {
             exact />
 
            <Route
-            path='/admin'
+            path='/ADMIN'
             component={AdminPage}
             exact />
-        
-          
+          {/*
           <Route
-            path='/signup'
-            component={Signup}
-            exact />  
-        </Container>
-        
-      </main>
+            path='/'
+            component={}
+            exact />  */}
+       
       <Footer />
     </Router>
   );

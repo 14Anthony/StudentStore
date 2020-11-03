@@ -7,9 +7,9 @@ import DeleteBtn from "../DeleteBtn";
 // import { List, ListItem } from "../List";
 import { Input, TextArea, FormBtn } from "../Form";
 import { Button, Form } from "react-bootstrap";
-function Books() {
+function FormCard() {
   // Setting our component's initial state
-  const [books, setBooks] = useState([]);
+  // const [books, setBooks] = useState([]);
   const [formObject, setFormObject] = useState({});
   console.log(formObject);
   // Load all books and store them with setBooks
@@ -43,7 +43,7 @@ function Books() {
   }
 
   return (
-    <Container fluid>
+    <Container fluid className="py-3">
       <Row>
         <Col size="md-6">
           <form>
@@ -75,7 +75,7 @@ function Books() {
               disabled={!(formObject.author && formObject.title)}
               onClick={handleFormSubmit}
             >
-              Submit Book
+              Add Product
             </Button>
           </form>
         </Col>
@@ -84,4 +84,4 @@ function Books() {
   );
 }
 
-export default Books;
+export default FormCard;
