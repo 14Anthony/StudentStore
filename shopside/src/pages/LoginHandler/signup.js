@@ -1,5 +1,7 @@
-import React from "react";
+import { set } from "mongoose";
+import React, {useState} from "react";
 import "../../components/style/login.css"
+import API from '../../utils/API'
 // import Content from "../components/Content";
 
 function SignUp() {
@@ -7,6 +9,24 @@ function SignUp() {
   //   exists: false,
   // });
 
+  const [userState, setNewUser] = useState({
+        userStatus: '',
+        firstName: '',
+        lastName:'',
+        email: '',
+        userName: '',
+        pswd:''
+  });
+
+
+
+  const handleInputChange= (e) =>{
+    setNewUser({...userState, [e.target.name]:e.target.value})
+  }
+  function addUser(){
+    API.addUser(userState);
+    console.log(userState);
+  }
   return (
     <div>
     <div className = 'container'>
@@ -16,17 +36,17 @@ function SignUp() {
         <div className = 'col login'>
           <div className = 'card login'>
           <p>First Name</p>
-          <input></input>
+          <input name= {"firstName"} onChange={handleInputChange}></input>
           <p>Last Name</p>
-          <input></input>
+          <input name= {"lastName"} onChange={handleInputChange}></input>
           <p>Email</p>
-          <input></input>
+          <input name = {"email"} onChange={handleInputChange}></input>
           <p>User Name</p>
-          <input></input>
+          <input name = {"userName"} onChange={handleInputChange}></input>
           <p> Password</p>
-          <input></input>
+          <input type='password' name = {"pswd"} onChange={handleInputChange}></input>
           </div>
-          <button className = "submit">Submit</button>
+          <button className = "submit" onClick = {addUser}>Submit</button>
         </div>
       </div>
 

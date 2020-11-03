@@ -7,5 +7,18 @@ const APIKEY = "&api_key=dc6zaTOxFJmzC&limit=20";
 export default {
   search: function(query) {
     return axios.get(BASEURL + query + APIKEY);
+  },
+  addUser: function(userCreds){
+    console.log('button click');
+    axios.post('api/addusers').then((res)=>{
+        console.log(res);
+    });
+    
+    
+  },
+  checkUser: function(loginCreds){
+
   }
+
 };
+
