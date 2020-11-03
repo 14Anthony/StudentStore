@@ -49,7 +49,7 @@ function Login() {
             <div className = 'card-body'>
               <div className = 'card-title'>
 
-              <LinkContainer to='/signup.js'>
+              <LinkContainer to='/signup'>
                                 <Nav.Link ><i className='fas fa-user'></i>Click Here If You Need To Create A User</Nav.Link>
               </LinkContainer>
         

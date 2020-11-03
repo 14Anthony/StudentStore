@@ -1,31 +1,29 @@
-// import { set } from "mongoose";
-import React, {useState} from "react";
+
+import React, { useState } from "react";
 import "../../components/style/login.css"
 import API from '../../utils/API'
 // import Content from "../components/Content";
 
 function SignUp() {
-  // const [useUser, setUser] = useState({
-  //   exists: false,
-  // });
-
-  const [userState, setNewUser] = useState({
-        userStatus: '',
-        firstName: '',
-        lastName:'',
-        email: '',
-        userName: '',
-        pswd:''
+  const [userCred, setUser] = useState({
+    firstName: '',
+    lastName:'',
+    email:'',
+    userName:'',
+    password:'',
+    amdin:''
   });
 
 
-
-  const handleInputChange= (e) =>{
-    setNewUser({...userState, [e.target.name]:e.target.value})
+  const addUser = () =>{
+    console.log(userCred);
   }
-  function addUser(){
-    API.addUser(userState);
-    console.log(userState);
+
+  const onChangeHandler = (e) =>{
+    setUser({
+      ...userCred, 
+      [e.target.name]: e.target.value
+    });
   }
   return (
     <div>
@@ -36,17 +34,17 @@ function SignUp() {
         <div className = 'col login'>
           <div className = 'card login'>
           <p>First Name</p>
-          <input name= {"firstName"} onChange={handleInputChange}></input>
+          <input name = 'firstName' onChange ={onChangeHandler}></input>
           <p>Last Name</p>
-          <input name= {"lastName"} onChange={handleInputChange}></input>
+          <input name = 'lastName' onChange ={onChangeHandler}></input>
           <p>Email</p>
-          <input name = {"email"} onChange={handleInputChange}></input>
+          <input name = 'email' onChange ={onChangeHandler}></input>
           <p>User Name</p>
-          <input name = {"userName"} onChange={handleInputChange}></input>
+          <input name = 'userName' onChange ={onChangeHandler}></input>
           <p> Password</p>
-          <input type='password' name = {"pswd"} onChange={handleInputChange}></input>
+          <input name = 'password' onChange ={onChangeHandler}></input>
           </div>
-          <button className = "submit" onClick = {addUser}>Submit</button>
+          <button className = "submit" onClick= {addUser}>Submit</button>
         </div>
       </div>
 
