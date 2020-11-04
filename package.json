@@ -4,18 +4,12 @@
   "version": "1.0.0",
   "description": "project three completing an react app, using authentication, MERN stack, and MVC modeling",
   "main": "index.js",
-<<<<<<< HEAD
-  "scripts": {
-    "start": "node backend/server.js",
-    "build": " babel /backend -d build"
-=======
   "type": "module",
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d"
->>>>>>> 28b559c135d84d58056791f8db7e80895ed98e9b
   },
   "repository": {
     "type": "git",
