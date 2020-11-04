@@ -4,7 +4,7 @@
 
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const Product = require('../models/productModel.js')
+// const Product = require('../models/productModel.js')
 
 const router = express.Router()
 // the is going to grab all of the students
@@ -12,29 +12,14 @@ const router = express.Router()
 // this is access for a public routes
 
 
-router.get('/', asyncHandler(async (req, res, next) => {
-    const products = await Product.find({})
-
-    res.json(products)
-}))
+router.post('/api/addusers', (req, res) => {
+   console.log('from server req =' , req);
+    
+})
 // the is going to grab single student
 //  GET to /api/products/:id
 // this is access for a public routes
 
-
-
-router.get('/:id', asyncHandler(async (req, res, next) => {
-    const product = await Product.findById(req.params.id)
-
-    if (product) {
-
-        res.json(product)
-
-    } else {
-
-        res.status(404).json({ message: 'product not found' })
-    }
-}))
 
 // export default router
 module.exports = router;
