@@ -1,12 +1,30 @@
-import React from "react";
+
+import React, { useState } from "react";
 import "../../components/style/login.css"
+import API from '../../utils/API'
 // import Content from "../components/Content";
 
 function SignUp() {
-  // const [useUser, setUser] = useState({
-  //   exists: false,
-  // });
+  const [userCred, setUser] = useState({
+    firstName: '',
+    lastName:'',
+    email:'',
+    userName:'',
+    password:'',
+    amdin:''
+  });
 
+
+  const addUser = () =>{
+    console.log(userCred);
+  }
+
+  const onChangeHandler = (e) =>{
+    setUser({
+      ...userCred, 
+      [e.target.name]: e.target.value
+    });
+  }
   return (
     <div>
     <div className = 'container'>
@@ -16,17 +34,17 @@ function SignUp() {
         <div className = 'col login'>
           <div className = 'card login'>
           <p>First Name</p>
-          <input></input>
+          <input name = 'firstName' onChange ={onChangeHandler}></input>
           <p>Last Name</p>
-          <input></input>
+          <input name = 'lastName' onChange ={onChangeHandler}></input>
           <p>Email</p>
-          <input></input>
+          <input name = 'email' onChange ={onChangeHandler}></input>
           <p>User Name</p>
-          <input></input>
+          <input name = 'userName' onChange ={onChangeHandler}></input>
           <p> Password</p>
-          <input></input>
+          <input name = 'password' onChange ={onChangeHandler}></input>
           </div>
-          <button className = "submit">Submit</button>
+          <button className = "submit" onClick= {addUser}>Submit</button>
         </div>
       </div>
 

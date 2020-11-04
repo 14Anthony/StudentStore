@@ -5,11 +5,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Login from './pages/LoginHandler/LoginHandler';
+import Signup from './pages/LoginHandler/signup';
 import HomePage from './pages/homePage'
 import productPage from './pages/productPage'
 import Context from "./utils/context.js"
 import AdminPage from "./pages/AdminPage"
-
+import Signup from "./pages/LoginHandler/signup"
 // I deleted the HomePage tag, and imported route, given the path = "tosomepath"  it will render component={pulling in somecomponent}  then make sure you have "exact" path. if you are
 const App = () => {
   const { userStatus } = useContext(Context);
@@ -18,6 +19,8 @@ const App = () => {
   
   return (
     <Router>
+    {/* <Context.Provider > */}
+
 
       <Header />
       <main className='py-3' >
@@ -34,9 +37,11 @@ const App = () => {
           />
            
           <Route
-            path='/LOGIN'
+            path='/login'
             render= {() =>(
+            <Context.Provider>
               <Login userStatus ={userStatus} />
+            </Context.Provider>
             )}
             exact />
 
@@ -44,12 +49,12 @@ const App = () => {
             path='/admin'
             component={AdminPage}
             exact />
-          {/*
-
-          <Route
-            path='/'
-            component={}
-            exact />  */}
+        
+          <Route 
+            path="/signup"
+            component = {Signup}
+            exact/> 
+         
         </Container>
         
       </main>
