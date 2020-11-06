@@ -2,10 +2,12 @@ import React from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 // make sure to check to see if you imported each of the specific components you need.
 import { Container, Nav, Navbar } from 'react-bootstrap'
+import cartContext from '../utils/cartContext';
 
 // so if you import es7  you can create arrow functions for export immediately, by typingin racfe 
 
 const Header = () => {
+    const { cartItems } = useContext(cartContext);
     return (
         <header>
 
