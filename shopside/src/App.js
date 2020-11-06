@@ -14,6 +14,7 @@ import cartContext from './utils/cartContext'
 // I deleted the HomePage tag, and imported route, given the path = "tosomepath"  it will render component={pulling in somecomponent}  then make sure you have "exact" path. if you are
 const App = () => {
   const { userStatus } = useContext(Context);
+  const [cartItems, setCartItems] = useState();
 
   console.log(Context.userStatus);
 
@@ -22,10 +23,10 @@ const App = () => {
       {/* <Context.Provider > */}
 
 
+      <cartContext.Provider value={{ cartItems, setCartItems }}>
       <Header />
-      <main className='py-3' >
-        <Container>
-          <cartContext.Provider>
+        <main className='py-3' >
+          <Container>
             <Route
               path='/'
               component={HomePage}
@@ -36,29 +37,29 @@ const App = () => {
               path='/product/:id'
               component={productPage}
             />
-          </cartContext.Provider>
-          <Route
-            path='/login'
-            render={() => (
-              <Context.Provider>
-                <Login userStatus={userStatus} />
-              </Context.Provider>
-            )}
-            exact />
+            <Route
+              path='/login'
+              render={() => (
+                <Context.Provider>
+                  <Login userStatus={userStatus} />
+                </Context.Provider>
+              )}
+              exact />
 
-          <Route
-            path='/admin'
-            component={AdminPage}
-            exact />
+            <Route
+              path='/admin'
+              component={AdminPage}
+              exact />
 
-          <Route
-            path="/signup"
-            component={Signup}
-            exact />
+            <Route
+              path="/signup"
+              component={Signup}
+              exact />
 
-        </Container>
+          </Container>
 
-      </main>
+        </main>
+      </cartContext.Provider>
       <Footer />
     </Router>
   );
