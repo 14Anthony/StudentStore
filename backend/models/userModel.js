@@ -24,8 +24,12 @@ const userSchema = mongoose.Schema({
 
         type: String,
         required: true,
-        default: false
     },
+    storeName: {
+        type: String, 
+        reauired: false, 
+    
+    }
 }, {
     timestamps: true
 
@@ -33,5 +37,5 @@ const userSchema = mongoose.Schema({
 
 const User = mongoose.model('User', userSchema)
 
-export default User
+// export default User
 module.exports = User;

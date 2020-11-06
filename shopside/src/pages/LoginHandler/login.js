@@ -7,9 +7,6 @@ import API from '../../utils/API'
 
 
 const setUser = (userCred)=>{
-
-  
-
   return userCred;
 }
 const getUser = () =>{
