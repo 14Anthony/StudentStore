@@ -29,8 +29,8 @@ const Header = () => {
 
                             <LinkContainer to='/CART'>
                                 <>
+                                <p className="text-danger">{cartItems.length}</p>
                                 <Nav.Link><i className='fas fa-shopping-cart'></i>CART</Nav.Link>
-                                <p> {cartItems.length} </p>
                                 </>
                             </LinkContainer>
 
