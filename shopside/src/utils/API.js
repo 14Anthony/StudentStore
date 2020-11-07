@@ -10,7 +10,7 @@ export default {
   },
   addUser: function(userCreds){
     console.log('button click');
-    axios.post('http://localhost:8800/api/addusers',{
+    axios.post('/api/addusers',{
         userCreds
     }).then((res)=>{
         console.log(res.data)
@@ -18,7 +18,7 @@ export default {
     
   },
   getUser: function(){
-        axios.get('http://localhost:8800/api/test').then(function(res){
+        axios.get('/api/test').then(function(res){
           console.log(res.data);
           console.log('mock user',res.data);
         })
