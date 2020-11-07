@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 // make sure to check to see if you imported each of the specific components you need.
 import { Container, Nav, Navbar } from 'react-bootstrap'
