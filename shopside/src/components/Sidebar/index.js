@@ -1,29 +1,31 @@
 import React from "react";
-import Link from "react-bootstrap/Nav";
+import { Link, useRouteMatch } from "react-router-dom";
 import { AdminSideBar, UserSideBar } from "../../console_data/data";
 import "./style.css";
-// import { Nav } from "react-bootstrap";
-
+console.log(AdminSideBar);
+console.log(UserSideBar);
+function Resource() {
+  return <p>RESOURCE</p>;
+}
 const Sidebar = () => {
+  let { path, url } = useRouteMatch();
+
   return (
     // <!-- Sidebar -->
-
-    
-      <div className="bg-dark border-right" id="sidebar-wrapper">
-        <div className="sidebar-heading text-light">"UserName"</div>
-
-        <div className="list-group list-group-flush">
-          {AdminSideBar.map((data, key) => (
-            <Link
-              key={key}
-              className="list-group-item list-group-item-action text-light bg-dark"
-            >
-              {data.name}
-            </Link>
-          ))}
-        </div>
+    <div className="bg-dark border-right" id="sidebar-wrapper">
+      <div className="sidebar-heading text-light">"AdminPage"</div>
+      <div className="list-group list-group-flush">
+        {AdminSideBar.map(({ name, id }) => (
+          <Link
+            key={id}
+            to={`${url}/${id}`}
+            className="list-group-item list-group-item-action text-light bg-dark"
+          >
+            {name}
+          </Link>
+        ))}
       </div>
-    
+    </div>
   );
 };
 

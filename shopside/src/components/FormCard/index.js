@@ -6,7 +6,16 @@ import { Button, Form } from "react-bootstrap";
 
 function FormCard() {
 
-  // const [products, setProducts] = useState([])
+  // const [products, setProducts] = useState({
+    //name: "",
+    //brand:"",
+    //category:"",
+    //description:"",
+    //salary: "",
+    //countInStock:"",
+    //
+    //
+ // })
   const [formObject, setFormObject] = useState({});
   console.log(formObject);
   // Load all books and store them with setBooks

@@ -42,17 +42,17 @@ const App = () => {
               <Login userStatus ={userStatus} />
             </Context.Provider>
             )}
-            exact />
+             />
 
            <Route
             path='/admin'
             component={AdminPage}
-            exact />
+             />
         
           <Route 
             path="/signup"
             component = {Signup}
-            exact/>        
+           />        
         
         
       
