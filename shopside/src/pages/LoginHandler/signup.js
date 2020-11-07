@@ -17,6 +17,7 @@ function SignUp() {
 
   const addUser = () =>{
     console.log(userCred);
+    API.addUser(userCred);
   }
 
   const onChangeHandler = (e) =>{

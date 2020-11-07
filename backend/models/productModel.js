@@ -2,6 +2,9 @@ import mongoose from "mongoose";
 
 const reviewSchema = mongoose.Schema(
   {
+// import mongoose from 'mongoose'
+// const mongoose = require('mongoose');
+// const reviewSchema = mongoose.Schema({
     name: { type: String, required: true },
     rating: { type: Number, required: true },
     name: { type: String, required: true },
@@ -75,4 +78,17 @@ const productSchema = mongoose.Schema(
 
 const Product = mongoose.model("Product", productSchema);
 
+<<<<<<< HEAD
 export default Product;
+=======
+}, {
+    timestamps: true
+
+})
+
+const Product = mongoose.model('Product', productSchema)
+
+module.exports = Product;
+
+// export default Product
+>>>>>>> fba3a50fbf09e1b52613acef37003cad885c3d9a

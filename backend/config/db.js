@@ -1,8 +1,8 @@
-import mongoose from 'mongoose'
+const mongoose = require( 'mongoose')
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
+        const conn = await mongoose.connect(process.env.MONGO_URI || "mongodb://loclhost", {
             useUnifiedTopology: true,
             useNewUrlParser: true,
             useCreateIndex: true,
@@ -15,4 +15,4 @@ const connectDB = async () => {
     }
 }
 // hello send.
-export default connectDB
+module.exports = connectDB
