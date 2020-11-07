@@ -28,8 +28,10 @@ const Header = () => {
                             {/* fontawesome for the cart, and users */}
 
                             <LinkContainer to='/CART'>
+                                <>
                                 <Nav.Link><i className='fas fa-shopping-cart'></i>CART</Nav.Link>
                                 <p> {cartItems.length} </p>
+                                </>
                             </LinkContainer>
 
 
