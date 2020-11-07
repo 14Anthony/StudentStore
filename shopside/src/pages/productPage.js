@@ -4,7 +4,7 @@ import { Row, Col, Image, ListGroup, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
 // import products from '../products'
 import axios from 'axios'
-import cartContext from './utils/cartContext'
+import cartContext from '../utils/cartContext'
 
 const ProductPage = ({ match }) => {
 
@@ -12,7 +12,7 @@ const ProductPage = ({ match }) => {
 
     // const product = products.find(p => p._id === match.params.id) moving over to the back end .......like I just did on homePage, 
     const [product, setProduct] = useState({})
-    const { setCartItems } = useContext(cartContext);
+    const { cartItems, setCartItems } = useContext(cartContext);
     // same functionality from the homePage.js file, as I mimick.
     useEffect(() => {
         const getProduct = async () => {
@@ -75,7 +75,7 @@ const ProductPage = ({ match }) => {
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            <Button onClick = { () => setCartItems(product)} className='btn-block' type='button' disabled={product.countInStock === 0}>
+                            <Button onClick = { () => setCartItems([...cartItems, product])} className='btn-block' type='button' disabled={product.countInStock === 0}>
                                 Add To Cart
                             </Button>
                         </ListGroup.Item>
