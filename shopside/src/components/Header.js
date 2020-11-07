@@ -26,12 +26,12 @@ const Header = () => {
                         <Nav className="ml-auto">
 
                             {/* fontawesome for the cart, and users */}
-
+                            <p className="text-danger">{cartItems.length}</p>
                             <LinkContainer to='/CART'>
-                                <>
-                                <p className="text-danger">{cartItems.length}</p>
+                                
+                                
                                 <Nav.Link><i className='fas fa-shopping-cart'></i>CART</Nav.Link>
-                                </>
+                            
                             </LinkContainer>
 
 
