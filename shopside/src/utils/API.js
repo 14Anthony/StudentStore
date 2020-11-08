@@ -17,10 +17,10 @@ export default {
     });
     
   },
-  getUser: function(){
-        axios.get('/api/test').then(function(res){
-          console.log(res.data);
-          console.log('mock user',res.data);
+  getUser: function(login){
+        axios.get('/api/checkUser').then(function(data){
+          console.log(data);
+          console.log('mock user',data.data);
         })
       },
       

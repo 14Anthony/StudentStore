@@ -4,7 +4,7 @@
 
 const express = require('express');
 const router = express.Router()
-const db = require('../../controllers/userControllers.js')
+const User = require('../../controllers/userControllers')
 // const asyncHandler = require('express-async-handler');
 // const Product = require('../models/productModel.js')
 
@@ -15,17 +15,15 @@ const db = require('../../controllers/userControllers.js')
 
 router.post('/api/addusers', (req, res) => {
     //mongoose in to add the user
-   console.log('from server req =' , req.body);
-   db.create(req.body);
+   console.log('from server req =' , req.body.userCreds);
+   const user = req.body.userCreds;
+   User.create(user);
    res.send(req.body);
 });
 
 router.get('/api/checkUser', function(req, res) {
-    //mongoose into db for all user
-    res.send(
-        db.findAll(req, res)
-        );
-
+    //mongoose into db for all users
+    res.send(User.findAll());
 });
 // the is going to grab single student
 //  GET to /api/products/:id
