@@ -2,13 +2,11 @@ import React from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import { AdminSideBar, UserSideBar } from "../../console_data/data";
 import "./style.css";
-console.log(AdminSideBar);
+// console.log(AdminSideBar);
 console.log(UserSideBar);
-function Resource() {
-  return <p>RESOURCE</p>;
-}
+
 const Sidebar = () => {
-  let { path, url } = useRouteMatch();
+  let { url } = useRouteMatch();
 
   return (
     // <!-- Sidebar -->

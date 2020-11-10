@@ -17,13 +17,15 @@ dotenv.config();
 connectDB();
 
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+app.use("/api/products", productRoutes);
+app.use("./api/userRoutes", userRoutes);
 app.get("/", (req, res, next) => {
   res.send("Backend Begins...");
 });
 
-app.use("/api/products", productRoutes);
-app.use("./api/userRoutes", userRoutes);
 // app.use(notFound);
 
 // app.use(errorHandler);

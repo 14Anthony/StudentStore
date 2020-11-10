@@ -8,9 +8,9 @@ const LoginHandler = ({userStatus}) => {
     
     switch(userStatus){
         case true: return <Home />
-        break;
+       
         case false: return <SignUp />
-        break;
+        
         default: return <Login />
     }
 }
