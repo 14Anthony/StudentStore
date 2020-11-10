@@ -3,9 +3,9 @@ import React from "react";
 const Context = React.createContext({
   userStatus: '',
   permissions:'',
-
-  prduct: '',
-  price: ''
+  userName: '',
+  lastName: '',
+  pwd: ''
 });
 
 export default Context;

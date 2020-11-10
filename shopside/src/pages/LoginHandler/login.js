@@ -1,24 +1,11 @@
-import React from "react";
+import React , {useState}from "react";
+import { LinkContainer } from 'react-router-bootstrap'
+import { Nav } from 'react-bootstrap'
 import "../../components/style/login.css"
 import API from '../../utils/API'
 // import Content fr
 
 
-const setUser = (userCred)=>{
-
-  
-
-  return userCred;
-}
-const getUser = () =>{
-    return setUser();
-}
-
-const checkUser = (user) =>{
-    API.login(user)
-    .then(res => setUser(res))
-    .catch(err => console.log(err))
-}
 
 
 function Login() {
@@ -26,6 +13,26 @@ function Login() {
   // const [useUser, setUser] = useState({
   //   exists: false,
   // });
+
+  const [login, setLogin] = useState({
+    email: '',
+    password: ''
+  });
+
+  const onChange =(e) =>{
+    setLogin({
+      ...login, 
+      [e.target.name]: e.target.value
+    });
+  }
+  const checkUser=(input)=>{
+    console.log('clicked');
+    API.getUser();
+  }
+
+  const submitLogin = () =>{
+      checkUser(login)
+  }
 
   return (
     <div>
@@ -35,20 +42,22 @@ function Login() {
       <div className = 'row'>
         <div className = 'col login'>
           <div className = 'card login'>
-          <p>User Name</p>
-          <input></input>
+          <p>Email</p>
+          <input name = 'email' onChange={onChange}></input>
           <p> Password</p>
-          <input type = "password"></input>
+          <input type = "password" name = 'password' onChange= {onChange} ></input>
           </div>
-          <button className = "submit">Submit</button>
+          <button className = "submit" onClick = {submitLogin}>Submit</button>
         </div>
         <div className = 'col login'>
           <div className = 'card login'>
             <div className = 'card-body'>
               <div className = 'card-title'>
 
-
-          <a href= "#"> Click here if you need to sign up</a>
+              <LinkContainer to='/signup'>
+                                <Nav.Link ><i className='fas fa-user'></i>Click Here If You Need To Create A User</Nav.Link>
+              </LinkContainer>
+        
               </div>
             </div>
           </div>
