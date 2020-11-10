@@ -18,11 +18,11 @@ const Console = () => {
   let { path } = useRouteMatch();
   // const [consoleObject, setconsoleObject] = useState({option: ""});
   return (
-    <div id="page-content-wrapper">
+    // <div id="page-content-wrapper">
       <Container fluid>
         <Route path={`${path}/:topicId`} component={Resource} />
       </Container>
-    </div>
+    // </div>
   );
 };
 

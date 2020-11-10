@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import { AdminSideBar, UserSideBar } from "../../console_data/data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button } from "react-bootstrap";
 import "./style.css";
 // console.log(AdminSideBar);
 console.log(UserSideBar);
@@ -10,16 +12,18 @@ const Sidebar = () => {
 
   return (
     // <!-- Sidebar -->
-    <div className="bg-dark border-right" id="sidebar-wrapper">
-      <div className="sidebar-heading text-light">"AdminPage"</div>
+    <div id="sidebar-wrapper">
+      
       <div className="list-group list-group-flush">
-        {AdminSideBar.map(({ name, id }) => (
+        {AdminSideBar.map(({ name, id, icon, order }) => (
           <Link
+            id={order}
             key={id}
             to={`${url}/${id}`}
-            className="list-group-item list-group-item-action text-light bg-dark"
+            className="list-group-item list-group-item-action text-light bg-dark mb-3"
           >
-            {name}
+            <span className="mr-3">{name}</span>
+            <FontAwesomeIcon className="float-right" icon={icon} />
           </Link>
         ))}
       </div>

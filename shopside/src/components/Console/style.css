@@ -1,4 +1,10 @@
+.container-fluid{
+  margin: 0 15px 0 15px; 
+  padding: 40px;
+}
 
+
+/* 
 
  #wrapper {
     overflow-x: hidden;
@@ -43,4 +49,4 @@
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -13rem;
   }
-}
+} */
