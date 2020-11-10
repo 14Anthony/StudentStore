@@ -15,15 +15,19 @@ const userSchema = mongoose.Schema(
       required: true,
     },
     isAdmin: {
-      type: String,
-      required: true,
-      default: false,
+
+        type: String,
+        required: true,
     },
-  },
-  {
-    timestamps: true,
-  }
-);
+    storeName: {
+        type: String, 
+        reauired: false, 
+    
+    }
+}, {
+    timestamps: true
+
+})
 
 const User = mongoose.model("User", userSchema);
 
