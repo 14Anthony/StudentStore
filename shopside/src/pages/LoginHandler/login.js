@@ -30,8 +30,9 @@ function Login() {
     API.getUser();
   }
 
-  const submitLogin = () =>{
-      checkUser(login)
+  const submitLogin = (e) =>{
+      e.preventDefault();
+      checkUser(login);
   }
 
   return (

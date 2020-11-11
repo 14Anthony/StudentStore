@@ -3,13 +3,12 @@ const db = require( "../backend/models/userModel.js")
 
 // Defining methods for the productsController
 module.exports = {
-  findAll: function() {
+  findAll: function(req, res) {
     db
-      .find({})
-      .sort({ date: -1 })
+      .find()
       .then(data => {
         console.log(data);
-        return data;
+       res.json(data);
       })
       .catch(err => console.log(err));
   },
@@ -22,7 +21,7 @@ module.exports = {
   create: function(req, res) {
         console.log("from create", req);
     db
-      .create(req)
+      .create(req.body)
       .then(dbModel => {
         console.log('json undefinded', dbModel);
         res.send(dbModel);

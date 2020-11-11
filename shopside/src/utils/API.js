@@ -17,16 +17,15 @@ export default {
     });
     
   },
-  getUser: function(login){
-        axios.get('/api/checkUser').then(function(data){
+  getUser: function(username, email){
+        axios.get('/api/checkuser', {
+        }).then(function(data){
           console.log(data);
           console.log('mock user',data.data);
         })
       },
       
-  checkUser: function(loginCreds){
-
-  }
+  
 
 };
 
