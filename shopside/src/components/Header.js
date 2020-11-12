@@ -30,26 +30,28 @@ const Header = () => {
                             </LinkContainer>
 
 
-
-                            <LinkContainer to='/LOGIN'>{(
-                                localStorage.getItem('loggedIn') !== 'true' ?
-                                <Nav.Link ><i className='fas fa-user'>
-                                </i>LOGIN</Nav.Link>
-                                    :<>
-                                <Nav.Link onClick = {()=>{localStorage.setItem('loggedIn', '');
-                                    window.location.reload();
-                                }}><i className = "fas fa-user"></i>Log Out</Nav.Link>
-                                    </>
+                            {(localStorage.getItem('loggedIn') === 'true' ?
+                                <LinkContainer to='/'>
+                                    <Nav.Link onClick={() => {
+                                        localStorage.setItem('loggedIn', '');
+                                        localStorage.setItem('admin', '');
+                                        window.location.reload();
+                                    }}><i className="fas fa-user"></i>Sign Out</Nav.Link>
+                                </LinkContainer>
+                                :
+                                <LinkContainer to='/LOGIN'>
+                                    <Nav.Link ><i className='fas fa-user'>
+                                    </i>LOGIN</Nav.Link>
+                                </LinkContainer>
                             )}
-                              </LinkContainer>
 
 
                             <LinkContainer to='/ADMIN'>{(
                                 localStorage.getItem('admin') === 'yes' ?
-                                <Nav.Link ><i className='fas fa-user'></i>Admin</Nav.Link>:
-                                <>
+                                    <Nav.Link ><i className='fas fa-user'></i>Admin</Nav.Link> :
+                                    <>
 
-                                </>
+                                    </>
                             )}
                             </LinkContainer>
                         </Nav>
@@ -62,3 +64,5 @@ const Header = () => {
 }
 
 export default Header
+
+

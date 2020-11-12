@@ -2,7 +2,7 @@ const mongoose = require( 'mongoose')
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect( "mongodb://localhost/storefront", {
+        const conn = await mongoose.connect("mongodb://localhost/storefront", {
             useUnifiedTopology: true,
             useNewUrlParser: true,
             useCreateIndex: true,

@@ -2,8 +2,6 @@ import React from 'react';
 import Login from "./login";
 import SignUp from "./signup";
 import Home from "../../pages/homePage"
-import Context from '../../utils/context'
-// import "../../components/style/login.css"
 const LoginHandler = ({userStatus}) => {
      console.log(userStatus);
     
