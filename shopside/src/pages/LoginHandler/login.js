@@ -1,24 +1,23 @@
-import React , {useState}from "react";
+import React , {useState, useContext}from "react";
 import { LinkContainer } from 'react-router-bootstrap'
 import { Nav } from 'react-bootstrap'
 import "../../components/style/login.css"
 import API from '../../utils/API'
+import Context from '../../utils/context.js'
 // import Content fr
 
 
 
 
 function Login() {
-
-  // const [useUser, setUser] = useState({
-  //   exists: false,
-  // });
-
+  
+  const {userState, setState} = useContext(Context);
+  console.log(userState);
   const [login, setLogin] = useState({
     email: '',
     password: ''
   });
-
+  
   const onChange =(e) =>{
     setLogin({
       ...login, 
@@ -27,12 +26,23 @@ function Login() {
   }
   const checkUser=(input)=>{
     console.log('clicked');
-    API.getUser();
+    API.getUser(login.email, login.password).then((data)=>{
+                  
+      localStorage.setItem('loggedIn', data.data);
+      // localStorage.setItem('admin', ) 
+    console.log(data.data);
+      console.log('logged in status', localStorage.getItem('loggedIn'));
+  
+    setState({
+      userStatus: data.data
+    })
+  })
+    
   }
 
   const submitLogin = (e) =>{
       e.preventDefault();
-      checkUser(login);
+      checkUser();
   }
 
   return (

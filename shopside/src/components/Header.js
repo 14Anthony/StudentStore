@@ -30,13 +30,27 @@ const Header = () => {
                             </LinkContainer>
 
 
-                            <LinkContainer to='/LOGIN'>
-                                <Nav.Link ><i className='fas fa-user'></i>LOGIN</Nav.Link>
-                            </LinkContainer>
+
+                            <LinkContainer to='/LOGIN'>{(
+                                localStorage.getItem('loggedIn') !== 'true' ?
+                                <Nav.Link ><i className='fas fa-user'>
+                                </i>LOGIN</Nav.Link>
+                                    :<>
+                                <Nav.Link onClick = {()=>{localStorage.setItem('loggedIn', '');
+                                    window.location.reload();
+                                }}><i className = "fas fa-user"></i>Log Out</Nav.Link>
+                                    </>
+                            )}
+                              </LinkContainer>
 
 
-                            <LinkContainer to='/ADMIN'>
-                                <Nav.Link ><i className='fas fa-user'></i>Admin</Nav.Link>
+                            <LinkContainer to='/ADMIN'>{(
+                                localStorage.getItem('admin') === 'true' ?
+                                <Nav.Link ><i className='fas fa-user'></i>Admin</Nav.Link>:
+                                <>
+                                            
+                                </>
+                            )}
                             </LinkContainer>
                         </Nav>
 

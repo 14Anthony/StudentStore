@@ -15,15 +15,14 @@ const User = require('../../controllers/userControllers')
 
 router.post('/api/addusers', (req, res) => {
     //mongoose in to add the user
-   console.log('from server req =' , req.body.userCreds);
-   const user = req.body.userCreds;
-   User.create(user);
-   res.json(req.body);
+   User.create(req, res);
+
 });
 
 router.post('/api/checkuser', function(req, res) {
     //mongoose into db for all users
-    const user = req.body;
+   console.log(req.body); 
+    User.findAll(req, res);
 } 
 );
 // the is going to grab single student
