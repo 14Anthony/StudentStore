@@ -45,10 +45,10 @@ const Header = () => {
 
 
                             <LinkContainer to='/ADMIN'>{(
-                                localStorage.getItem('admin') === 'true' ?
+                                localStorage.getItem('admin') === 'yes' ?
                                 <Nav.Link ><i className='fas fa-user'></i>Admin</Nav.Link>:
                                 <>
-                                            
+
                                 </>
                             )}
                             </LinkContainer>

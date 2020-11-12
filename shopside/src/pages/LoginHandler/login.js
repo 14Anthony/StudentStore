@@ -27,10 +27,10 @@ function Login() {
   const checkUser=(input)=>{
     console.log('clicked');
     API.getUser(login.email, login.password).then((data)=>{
+      console.log(data);
                   
-      localStorage.setItem('loggedIn', data.data);
-      // localStorage.setItem('admin', ) 
-    console.log(data.data);
+      localStorage.setItem('loggedIn', data.data.loggedIn);
+      localStorage.setItem('admin', data.data.admin) 
       console.log('logged in status', localStorage.getItem('loggedIn'));
   
     setState({

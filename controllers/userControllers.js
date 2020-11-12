@@ -10,12 +10,15 @@ module.exports = {
     db
       .find({email: email})
       .then(data => {
-        console.log('promise data', data);
+        console.log('promise data', data[0].isAdmin);
         if(data.length === 0 ){
           res.send(false)
         }
         else{
-          res.send(true);
+          res.json({
+            loggedIn: 'true',
+            admin: data[0].isAdmin
+          });
         }
       })
       .catch(err => res.send(err));
