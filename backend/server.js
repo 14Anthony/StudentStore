@@ -6,6 +6,7 @@ const userRoutes = require('./routes/userRoutes.js')
 const productRoutes = require('./routes/productRoutes.js')
 const { notFound, errorHandler } = require('./middleware/errorMid.js')
 const cors = require("cors");
+var bodyParser = require("body-parser");
 // import express from "express";
 // import dotenv from "dotenv";
 // import connectDB from "./config/db.js";
@@ -19,8 +20,8 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(express.json());
 app.get("/", (req, res) => {

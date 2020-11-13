@@ -6,6 +6,18 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const Product = require("../models/productModel.js");
 const router = express.Router();
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + "-" + Date.now());
+  },
+});
+
+const upload = multer({ storage: storage });
 
 // the is going to grab all of the students
 // this will be the GET to /api/products
@@ -19,7 +31,7 @@ router
     })
   )
   //Create a product
-  .post(productController.create);
+  .post(productController.create)
 
 // the is going to grab single student
 //  GET to /api/products/:id
