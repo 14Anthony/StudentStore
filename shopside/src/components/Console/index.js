@@ -1,16 +1,28 @@
 import React from "react";
+import { Route, useRouteMatch } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import Sidebar from "../Sidebar";
-import FormCard from "../FormCard";
+import { AdminSideBar, UserSideBar } from "../../console_data/data";
 import "./style.css";
 
-const Console = () => {
+
+function Resource({ match }) {
+  const topic = AdminSideBar.find(({ id }) => id === match.params.topicId);
   return (
-    <div id="page-content-wrapper">
-    <Container fluid>
-      <FormCard />
-    </Container>
+    <div>
+      <topic.main />
     </div>
+  );
+}
+
+const Console = () => {
+  let { path } = useRouteMatch();
+  // const [consoleObject, setconsoleObject] = useState({option: ""});
+  return (
+    // <div id="page-content-wrapper">
+      <Container fluid>
+        <Route path={`${path}/:topicId`} component={Resource} />
+      </Container>
+    // </div>
   );
 };
 

@@ -6,49 +6,80 @@ import API from '../../utils/API'
 
 function SignUp() {
   const [userCred, setUser] = useState({
-    firstName: '',
-    lastName:'',
-    email:'',
-    userName:'',
-    password:'',
-    amdin:''
+    name: '',
+    email: '',
+    password: '',
+    isAdmin: ""
+
   });
 
-
-  const addUser = () =>{
-    console.log(userCred);
+  const resetUser =()=>{
+    setUser({
+      name: '',
+      email: '',
+      password: '',
+      isAdmin: ''
+    })
   }
 
-  const onChangeHandler = (e) =>{
+  const addUser = () => {
+    let userArr= [userCred]; 
+    // userArr = userArr.push(userCred)
+    console.log(userArr);
+    API.addUser(userArr);
+    
+  }
+
+  const getUser = () => {
+    console.log(userCred);
+    API.getUser();
+  }
+  const onChangeHandler = (e) => {
     setUser({
-      ...userCred, 
+      ...userCred,
       [e.target.name]: e.target.value
     });
   }
   return (
     <div>
-    <div className = 'container'>
-    </div>
-     <div className = 'container'>
-      <div className = 'row'>
-        <div className = 'col login'>
-          <div className = 'card login'>
-          <p>First Name</p>
-          <input name = 'firstName' onChange ={onChangeHandler}></input>
-          <p>Last Name</p>
-          <input name = 'lastName' onChange ={onChangeHandler}></input>
-          <p>Email</p>
-          <input name = 'email' onChange ={onChangeHandler}></input>
-          <p>User Name</p>
-          <input name = 'userName' onChange ={onChangeHandler}></input>
-          <p> Password</p>
-          <input name = 'password' onChange ={onChangeHandler}></input>
-          </div>
-          <button className = "submit" onClick= {addUser}>Submit</button>
-        </div>
+      <div className='container'>
       </div>
+      <div className='container'>
+        <div className='row'>
+          <div className='col login'>
+            <div className='card login'>
+              <p>Full Name</p>
+              <input name='name' onChange={onChangeHandler}></input>
+              <p>Email</p>
+              <input name='email' onChange={onChangeHandler}></input>
+              <p>Password</p>
+              <input name='password' onChange={onChangeHandler}></input>
+              <p>Shop Owner</p>
+              <div className='row'>
+                <div className='col-sm-2'>
+              <p>Yes</p>
+                  <input type="radio" name='isAdmin' value = "yes" onChange={onChangeHandler}></input>
+                </div>
+                <div className='col'>
+              <p>No</p>
+                  <input type="radio" name='isAdmin' value = 'no' onChange={onChangeHandler}></input>
+                </div>
+              </div>
+             <div>
+              {(userCred.isAdmin === 'yes' ? 
+              <>
+              <p>What is your stores name?</p>
+               <input name='storeName' onChange={onChangeHandler}></input>
+               </> 
+               :<p></p>)}
+             
+             </div>
+            </div>
+            <button className="submit" onClick={addUser}>Submit</button>
+          </div>
+        </div>
 
-     </div>
+      </div>
     </div>
   );
 }
