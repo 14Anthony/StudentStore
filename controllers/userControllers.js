@@ -3,15 +3,25 @@ const db = require( "../backend/models/userModel.js")
 
 // Defining methods for the productsController
 module.exports = {
-  findAll: function() {
+  findAll: function(req, res) {
+    console.log('usercred',req.body);
+    const email = req.body.email;
+    const pswd = req.body.password;
     db
-      .find({})
-      .sort({ date: -1 })
+      .find({email: email})
       .then(data => {
-        console.log(data);
-        return data;
+        console.log('promise data', data[0].isAdmin);
+        if(data.length === 0 ){
+          res.send(false)
+        }
+        else{
+          res.json({
+            loggedIn: 'true',
+            admin: data[0].isAdmin
+          });
+        }
       })
-      .catch(err => console.log(err));
+      .catch(err => res.send(err));
   },
   findById: function(req, res) {
     db
@@ -20,9 +30,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-        console.log("from create", req);
+        console.log("from create", req.body);
     db
-      .create(req)
+      .create(req.body.userCreds)
       .then(dbModel => {
         console.log('json undefinded', dbModel);
         res.send(dbModel);

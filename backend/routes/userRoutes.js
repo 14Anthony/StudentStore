@@ -1,9 +1,9 @@
 // import express from 'express'
 // import asyncHandler from 'express-async-handler'
 // import Product from '../models/productModel.js'
-
+const db = require('../models/userModel')
 const express = require('express');
-const router = express.Router()
+const router = express.Router({mergeParams:true})
 const User = require('../../controllers/userControllers')
 // const asyncHandler = require('express-async-handler');
 // const Product = require('../models/productModel.js')
@@ -15,16 +15,16 @@ const User = require('../../controllers/userControllers')
 
 router.post('/api/addusers', (req, res) => {
     //mongoose in to add the user
-   console.log('from server req =' , req.body.userCreds);
-   const user = req.body.userCreds;
-   User.create(user);
-   res.send(req.body);
+   User.create(req, res);
+
 });
 
-router.get('/api/checkUser', function(req, res) {
+router.post('/api/checkuser', function(req, res) {
     //mongoose into db for all users
-    res.send(User.findAll());
-});
+   console.log(req.body); 
+    User.findAll(req, res);
+} 
+);
 // the is going to grab single student
 //  GET to /api/products/:id
 // this is access for a public routes
