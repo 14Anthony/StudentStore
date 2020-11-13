@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'shopside/build')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
-app.use
+
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Backend Begins...");

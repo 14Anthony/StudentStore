@@ -35,7 +35,7 @@ const Header = () => {
                                     <Nav.Link onClick={() => {
                                         localStorage.setItem('loggedIn', '');
                                         localStorage.setItem('admin', '')
-                                        window.location.reload();
+                                        window.location.redirect();
                                     }}><i className="fas fa-user"></i>Sign Out</Nav.Link>
                                 </LinkContainer>
                                 :
