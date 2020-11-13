@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 // make sure to check to see if you imported each of the specific components you need.
 import { Container, Nav, Navbar } from 'react-bootstrap'
+import cartContext from '../utils/cartContext';
 
 // so if you import es7  you can create arrow functions for export immediately, by typingin racfe 
 
 const Header = () => {
+    const { cartItems } = useContext(cartContext);
     return (
         <header>
 
@@ -24,9 +26,12 @@ const Header = () => {
                         <Nav className="ml-auto">
 
                             {/* fontawesome for the cart, and users */}
-
+                            <p className="text-danger">{cartItems.length}</p>
                             <LinkContainer to='/CART'>
+                                
+                                
                                 <Nav.Link><i className='fas fa-shopping-cart'></i>CART</Nav.Link>
+                            
                             </LinkContainer>
 
 
