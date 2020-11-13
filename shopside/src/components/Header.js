@@ -31,7 +31,7 @@ const Header = () => {
 
 
                             {(localStorage.getItem('loggedIn') === 'true' ?
-                                <LinkContainer to='/LOGIN'>
+                                <LinkContainer to='/'>
                                     <Nav.Link onClick={() => {
                                         localStorage.setItem('loggedIn', '');
                                         localStorage.setItem('admin', '')

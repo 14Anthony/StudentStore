@@ -1,10 +1,10 @@
-const express = require('express')
-const dotenv = require('dotenv')
-const connectDB = require('./backend/config/db')
-const products = require('./backend/DB/products')
-const userRoutes = require('./backend/routes/userRoutes.js') 
-const productRoutes = require('./backend/routes/productRoutes.js')
-const { notFound, errorHandler } = require('./backend/middleware/errorMid.js')
+const express = require("express");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const products = require("./DB/products");
+const userRoutes = require("./routes/userRoutes.js");
+const productRoutes = require("./routes/productRoutes.js");
+const { notFound, errorHandler } = require("./middleware/errorMid.js");
 const cors = require("cors");
 // import express from "express";
 // import dotenv from "dotenv";
