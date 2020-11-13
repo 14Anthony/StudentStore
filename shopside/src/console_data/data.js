@@ -1,6 +1,7 @@
 import ProductList from "../components/productList";
 import FormCard from "../components/FormCard";
 import SignUp from "../pages/LoginHandler/signup";
+import Report from "../components/Report"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -10,7 +11,6 @@ import {
   faEdit,
   faChartBar,
 } from "@fortawesome/free-regular-svg-icons";
-
 
 export const AdminSideBar = [
   // {
@@ -51,7 +51,7 @@ export const AdminSideBar = [
     name: "Reports",
     order: "s4",
     id: "4",
-    main: () => <h2>Home</h2>,
+    main: () => <Report />,
     icon: faChartBar,
   },
 ];

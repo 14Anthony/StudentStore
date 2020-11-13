@@ -21,7 +21,7 @@ const Header = () => {
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto">
+                        <Nav className="ml-auto align-items-end">
 
                             {/* fontawesome for the cart, and users */}
 
