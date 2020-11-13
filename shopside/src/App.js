@@ -39,17 +39,17 @@ const App = () => {
             render= {() =>(
               <Login userStatus = {localStorage.getItem('loggedIn')}/>
             )}
-            exact />
-            
+             />
+
            <Route
             path='/admin'
             component={AdminPage}
-            exact />
+             />
         
           <Route 
             path="/signup"
             component = {Signup}
-            exact/>        
+           />        
         
         
       

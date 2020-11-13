@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "react-bootstrap/Card";
 import DeleteBtn from "../../components/DeleteBtn";
-
 import { List, ListItem } from "../../components/List";
 import productAPI from "../../utils/productAPI.js";
 
@@ -11,7 +9,7 @@ function ProductList() {
   useEffect(() => {
     loadProducts();
   }, []);
-
+// console.log(products);
   // Loads all products and sets them to products
   function loadProducts() {
     productAPI
@@ -19,13 +17,13 @@ function ProductList() {
       .then((res) => setProducts(res.data))
       .catch((err) => console.log(err));
   }
-  function deleteProduct(id) {
+  function delProduct(id) {
     productAPI
       .deleteProduct(id)
-      .then((res) => loadProducts())
+      .then((res) => loadProducts(res.data))
       .catch((err) => console.log(err));
   }
-  console.log(products);
+  
   return (
     <div>
       <h1>Product List</h1>
@@ -33,12 +31,12 @@ function ProductList() {
       <List>
         {products.map((data) => {
           return (
-            <ListItem key={data._id}>
-              <h3>{data.name}</h3>
+            <ListItem  key={data._id}>
+              <h3 id={data._id}>{data.name}</h3>
               <p>
                 -- {data.description} -- Price -- ${data.salary}
               </p>
-              <DeleteBtn onClick={() => deleteProduct(data._id)} />
+              <DeleteBtn onClick={() => delProduct(data._id)} />
             </ListItem>
           );
         })}

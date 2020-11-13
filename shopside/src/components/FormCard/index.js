@@ -2,24 +2,32 @@ import React, { useEffect, useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { Input, TextArea } from "../Form";
 import { Button, Form } from "react-bootstrap";
-// import productAPI from "../../utils/productAPI.js"
+import productAPI from "../../utils/productAPI.js"
 
 function FormCard() {
-
-  // const [products, setProducts] = useState([])
+  const [products, setProducts] = useState({
+  name: "",
+  brand:"",
+  category:"",
+  description:"",
+  salary: "",
+  countInStock:"",
+  
+  
+  })
   const [formObject, setFormObject] = useState({});
-  console.log(formObject);
+  // console.log(formObject);
   // Load all books and store them with setBooks
   useEffect(() => {}, []);
 
-  // // Loads all products and sets them to products
-  //   function loadProducts() {
-  //     productAPI.getProducts()
-  //       .then(res =>
-  //         setProducts(res.data)
-  //       )
-  //       .catch(err => console.log(err));
-  //   };
+  // Loads all products and sets them to products
+  function loadProducts() {
+   
+    productAPI
+      .getProducts()
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.log(err));
+  }
 
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -29,13 +37,13 @@ function FormCard() {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.title && formObject.price) {
-      //   API.saveBook({
-      //     title: formObject.title,
-      //     author: formObject.author,
-      //     synopsis: formObject.synopsis
-      //   })
-      //     .then(res => loadBooks())
-      //     .catch(err => console.log(err));
+        productAPI.saveProduct({
+          name: formObject.title,
+          description: formObject.description,
+          salary: formObject.price
+        })
+          .then(res => loadProducts())
+          .catch(err => console.log(err));
     }
   }
 
