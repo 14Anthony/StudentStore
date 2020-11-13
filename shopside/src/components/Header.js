@@ -21,7 +21,7 @@ const Header = () => {
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto">
+                        <Nav className="ml-auto align-items-end">
 
                             {/* fontawesome for the cart, and users */}
 
@@ -30,13 +30,29 @@ const Header = () => {
                             </LinkContainer>
 
 
-                            <LinkContainer to='/LOGIN'>
-                                <Nav.Link ><i className='fas fa-user'></i>LOGIN</Nav.Link>
-                            </LinkContainer>
+                            {(localStorage.getItem('loggedIn') === 'true' ?
+                                <LinkContainer to='/LOGIN'>
+                                    <Nav.Link onClick={() => {
+                                        localStorage.setItem('loggedIn', '');
+                                        localStorage.setItem('admin', '')
+                                        window.location.reload();
+                                    }}><i className="fas fa-user"></i>Sign Out</Nav.Link>
+                                </LinkContainer>
+                                :
+                                <LinkContainer to='/LOGIN'>
+                                    <Nav.Link ><i className='fas fa-user'>
+                                    </i>LOGIN</Nav.Link>
+                                </LinkContainer>
+                            )}
 
 
-                            <LinkContainer to='/ADMIN'>
-                                <Nav.Link ><i className='fas fa-user'></i>Admin</Nav.Link>
+                            <LinkContainer to='/ADMIN'>{(
+                                localStorage.getItem('admin') === 'yes' ?
+                                    <Nav.Link ><i className='fas fa-user'></i>Admin</Nav.Link> :
+                                    <>
+
+                                    </>
+                            )}
                             </LinkContainer>
                         </Nav>
 
@@ -48,3 +64,5 @@ const Header = () => {
 }
 
 export default Header
+
+
