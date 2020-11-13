@@ -1,7 +1,6 @@
 {
   "name": "studentstore",
-  "proxy": "http://127.0.0.1:8800",
-  "version": "1.0.0",
+   "version": "1.0.0",
   "description": "project three completing an react app, using authentication, MERN stack, and MVC modeling",
   "main": "server.js",
   "scripts": {
