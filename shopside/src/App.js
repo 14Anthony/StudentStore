@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useState} from 'react'
 // make sure to check to see if you imported each of the specific components you need.
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/Header'
@@ -13,18 +13,18 @@ import "./index.css"
 
 // I deleted the HomePage tag, and imported route, given the path = "tosomepath"  it will render component={pulling in somecomponent}  then make sure you have "exact" path. if you are
 const App = () => {
-  const { userStatus } = useContext(Context);
+  const [ userState, setState ] = useState({});
   
-  console.log(Context.userStatus);
+  
   
   return (
+
     <Router>
-    {/* <Context.Provider > */}
+            <Context.Provider value={{userState, setState}}>
 
-
+   
       <Header />
-      
-        
+   
           <Route
             path='/'
             component={HomePage}
@@ -39,9 +39,7 @@ const App = () => {
           <Route
             path='/login'
             render= {() =>(
-            <Context.Provider>
-              <Login userStatus ={userStatus} />
-            </Context.Provider>
+              <Login userStatus = {localStorage.getItem('loggedIn')}/>
             )}
              />
 
@@ -58,6 +56,7 @@ const App = () => {
         
       
       <Footer />
+            </Context.Provider>
     </Router>
   );
 }
