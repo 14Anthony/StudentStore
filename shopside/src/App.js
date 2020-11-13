@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useContext, useState } from 'react'
+=======
+import React, { useState} from 'react'
+>>>>>>> e3cdc79db719895b2c18fa98d769862239c76e9f
 // make sure to check to see if you imported each of the specific components you need.
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/Header'
@@ -12,6 +16,7 @@ import Signup from './pages/LoginHandler/signup'
 import cartContext from './utils/cartContext'
 // I deleted the HomePage tag, and imported route, given the path = "tosomepath"  it will render component={pulling in somecomponent}  then make sure you have "exact" path. if you are
 const App = () => {
+<<<<<<< HEAD
   const { userStatus } = useContext(Context);
   const [cartItems, setCartItems] = useState([]);
 
@@ -20,12 +25,24 @@ const App = () => {
   return (
     <Router>
       {/* <Context.Provider > */}
+=======
+  const [ userState, setState ] = useState({});
+  
+  
+  
+  return (
+>>>>>>> e3cdc79db719895b2c18fa98d769862239c76e9f
 
+    <Router>
+            <Context.Provider value={{userState, setState}}>
 
+<<<<<<< HEAD
       <cartContext.Provider value={{ cartItems, setCartItems }}>
+=======
+   
+>>>>>>> e3cdc79db719895b2c18fa98d769862239c76e9f
       <Header />
-      
-        
+   
           <Route
             path='/'
             component={HomePage}
@@ -37,12 +54,11 @@ const App = () => {
             component={productPage}
           />
            
+           
           <Route
             path='/login'
             render= {() =>(
-            <Context.Provider>
-              <Login userStatus ={userStatus} />
-            </Context.Provider>
+              <Login userStatus = {localStorage.getItem('loggedIn')}/>
             )}
              />
 
@@ -59,7 +75,11 @@ const App = () => {
         
       
       <Footer />
+<<<<<<< HEAD
       </cartContext.Provider>
+=======
+            </Context.Provider>
+>>>>>>> e3cdc79db719895b2c18fa98d769862239c76e9f
     </Router>
   );
 }

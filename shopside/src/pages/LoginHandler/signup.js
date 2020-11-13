@@ -22,17 +22,20 @@ function SignUp() {
     })
   }
 
-  const addUser = () => {
+  const addUser = (e) => {
+    e.preventDefault();
     let userArr= [userCred]; 
     // userArr = userArr.push(userCred)
     console.log(userArr);
-    API.addUser(userArr);
+    API.addUser(userArr).then(()=>{
+      localStorage.setItem('loggedIn', 'true');
+    })
     
   }
 
   const getUser = () => {
     console.log(userCred);
-    API.getUser();
+   
   }
   const onChangeHandler = (e) => {
     setUser({

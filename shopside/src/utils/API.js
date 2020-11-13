@@ -10,23 +10,18 @@ export default {
   },
   addUser: function(userCreds){
     console.log('button click');
-    axios.post('/api/addusers',{
+    return axios.post('/api/addusers',{
         userCreds
-    }).then((res)=>{
-        console.log(res.data)
-    });
+    })
     
   },
-  getUser: function(login){
-        axios.get('/api/checkUser').then(function(data){
-          console.log(data);
-          console.log('mock user',data.data);
+  getUser: function(email , password ){
+      return axios.post('/api/checkuser', {
+         password , email
         })
       },
       
-  checkUser: function(loginCreds){
-
-  }
+  
 
 };
 
