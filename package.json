@@ -5,16 +5,16 @@
   "description": "project three completing an react app, using authentication, MERN stack, and MVC modeling",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d",
-    "client-install": "npm install --prefix shopside", 
-    "shopside": "cd shopside && npm run start",   
-    "start:dev": "concurrently \"nodemon --ignore 'shopside/*'\" \"npm run shopside\""
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seeder.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "data:import": "node seeder",
+    "data:destroy": "node seeder -d",
+    "heroku-postbuild": "npm run build"
   
   },
   "eslingtConfig": {
