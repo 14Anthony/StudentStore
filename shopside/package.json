@@ -1,8 +1,8 @@
 {
   "name": "shopside",
-  "proxy": "http://127.0.0.1:8800",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://127.0.0.1:8800",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
