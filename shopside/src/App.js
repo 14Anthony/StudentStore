@@ -11,7 +11,6 @@ import Context from "./utils/context.js"
 import AdminPage from "./pages/AdminPage"
 import Signup from "./pages/LoginHandler/signup"
 import cartContext from './utils/cartContext'
-import CartPage from './pages/CartPage'
 // I deleted the HomePage tag, and imported route, given the path = "tosomepath"  it will render component={pulling in somecomponent}  then make sure you have "exact" path. if you are
 const App = () => {
   const { userStatus } = useContext(Context);
@@ -38,12 +37,6 @@ const App = () => {
               path='/product/:id'
               component={productPage}
             />
-
-            <Route
-              path='/CART'
-              component={CartPage}
-            />
-            
             <Route
               path='/login'
               render={() => (
