@@ -23,7 +23,7 @@ function ProductList() {
     .catch((err) => console.log(err));
   }
   
-  console.log(products[0].image.data);
+  
   return (
     <div>
       <h1>Product List</h1>
