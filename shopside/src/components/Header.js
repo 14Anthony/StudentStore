@@ -34,7 +34,7 @@ const Header = () => {
                                 <LinkContainer to='/'>
                                     <Nav.Link onClick={() => {
                                         localStorage.setItem('loggedIn', '');
-                                        localStorage.setItem('admin', '');
+                                        localStorage.setItem('admin', '')
                                         window.location.reload();
                                     }}><i className="fas fa-user"></i>Sign Out</Nav.Link>
                                 </LinkContainer>
