@@ -21,14 +21,11 @@ dotenv.config();
 connectDB();
 
 const app = express();
-<<<<<<< HEAD:backend/server.js
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-=======
 app.use(express.static(path.join(__dirname, 'shopside/build')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
->>>>>>> e3cdc79db719895b2c18fa98d769862239c76e9f:server.js
 
 app.use(express.json());
 app.get("/", (req, res) => {
