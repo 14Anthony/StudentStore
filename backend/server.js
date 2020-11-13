@@ -1,10 +1,10 @@
-const express = require('express')
-const dotenv = require('dotenv')
-const connectDB = require('./config/db')
-const products = require('./DB/products')
-const userRoutes = require('./routes/userRoutes.js') 
-const productRoutes = require('./routes/productRoutes.js')
-const { notFound, errorHandler } = require('./middleware/errorMid.js')
+const express = require("express");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const products = require("./DB/products");
+const userRoutes = require("./routes/userRoutes.js");
+const productRoutes = require("./routes/productRoutes.js");
+const { notFound, errorHandler } = require("./middleware/errorMid.js");
 const cors = require("cors");
 // import express from "express";
 // import dotenv from "dotenv";
@@ -21,10 +21,11 @@ connectDB();
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use("/uploads", express.static("uploads"));
+app.use
 app.use(express.json());
 app.get("/", (req, res) => {
-    res.send("Backend Begins...");
+  res.send("Backend Begins...");
 });
 
 app.use(cors());
