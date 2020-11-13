@@ -9,13 +9,10 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd shopside && npm run start",
-    "seed": "node scripts/seeder.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "data:import": "node seeder",
-    "data:destroy": "node seeder -d",
+    "install": "cd shopside && npm install",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d",
     "heroku-postbuild": "npm run build"
-  
   },
   "eslingtConfig": {
     "extends": "react-app"
@@ -31,17 +28,14 @@
   },
   "homepage": "https://github.com/14Anthony/StudentStore#readme",
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
     "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "mongoose": "^5.10.11",
-    "multer": "^1.4.2",
-    "uuid": "^8.3.1"
+    "multer": "^1.4.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",

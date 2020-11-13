@@ -4,27 +4,10 @@
 const productController = require("../../controllers/productController.js");
 const express = require("express");
 const asyncHandler = require("express-async-handler");
-<<<<<<< HEAD
-const Product = require("../models/productModel.js");
-const router = express.Router();
-const multer = require("multer");
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads");
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.fieldname + "-" + Date.now());
-  },
-});
-
-const upload = multer({ storage: storage });
-=======
 const Product = require("../models/productModel.js"),
   router = express.Router(),
   multer = require("multer");
   // uuidv4 = require("uuid/v5");
->>>>>>> 1cf12251d3b62eea3acde1c9f832ed58e828284a
 
 const DIR = "./public/";
 
@@ -64,9 +47,6 @@ router
     })
   )
   //Create a product
-<<<<<<< HEAD
-  .post(productController.create)
-=======
   .post(upload.single("productImg"), (req, res, next) => {
     console.log(req.file);
     const url = req.protocol + "://" + req.get("host");
@@ -92,7 +72,6 @@ router
           });
       });
   });
->>>>>>> 1cf12251d3b62eea3acde1c9f832ed58e828284a
 
 // the is going to grab single student
 //  GET to /api/products/:id

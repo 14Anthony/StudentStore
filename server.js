@@ -40,21 +40,11 @@ app.use(userRoutes);
 // app.use(errorHandler);
 
 //const PORT = process.env.PORT || 8800;
-
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
 const PORT = process.env.PORT || 3001;
 app.listen(PORT);
 
 
-// scripts": {
-//   "start": "node server",
-//   "server": "nodemon server",
-//   "build": "react-scripts build",
-//   "test": "react-scripts test",
-//   "eject": "react-scripts eject",
-//   "data:import": "node backend/seeder",
-//   "data:destroy": "node backend/seeder -d",
-//   "client-install": "npm install --prefix shopside", 
-//   "shopside": "cd shopside && npm run start",   
-//   "start:dev": "concurrently \"nodemon --ignore 'shopside/*'\" \"npm run shopside\""
 
-// },
