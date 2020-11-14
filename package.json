@@ -12,10 +12,9 @@
     "eject": "react-scripts eject",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "client-install": "npm install --prefix shopside", 
-    "shopside": "cd shopside && npm run start",   
+    "client-install": "npm install --prefix shopside",
+    "shopside": "cd shopside && npm run start",
     "start:dev": "concurrently \"nodemon --ignore 'shopside/*'\" \"npm run shopside\""
-  
   },
   "eslingtConfig": {
     "extends": "react-app"
