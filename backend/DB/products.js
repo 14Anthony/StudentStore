@@ -103,7 +103,7 @@ const products = [
         image: '/Photos/anthony.jpg',
         brand: 'Newbies',
         description:
-            'Anthony has a beanbag chair next to his computer',
+            'Its all your fault dude',
         motto: 'Beard no Beard, I am here',
         category: 'Its all your fault dude',
         salary: 100000,
@@ -113,4 +113,5 @@ const products = [
     },
 ]
 
-module.exports = products;
+module.export = products;
+// export default products
