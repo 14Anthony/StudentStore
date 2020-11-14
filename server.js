@@ -23,7 +23,11 @@ connectDB();
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'shopside/build')));
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("shopside/build"));
+  }
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
