@@ -77,8 +77,8 @@ function SignUp() {
                :<p></p>)}
              
              </div>
+            <button className="btn btn-primary submit" onClick={addUser}>Submit</button>
             </div>
-            <button className="submit" onClick={addUser}>Submit</button>
           </div>
         </div>
 
