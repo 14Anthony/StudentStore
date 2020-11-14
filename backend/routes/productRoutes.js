@@ -1,6 +1,3 @@
-// import express from 'express'
-// import asyncHandler from 'express-async-handler'
-// import Product from '../models/productModel.js'
 const productController = require("../../controllers/productController.js");
 const express = require("express");
 const asyncHandler = require("express-async-handler");
@@ -48,29 +45,29 @@ router
   )
   //Create a product
   .post(upload.single("productImg"), (req, res, next) => {
-    console.log(req.file);
-    const url = req.protocol + "://" + req.get("host");
-    const user = new Product({
-      name: req.body.name,
-      image: url + "/public/" + req.file.filename,
-    });
-    user
-      .save()
-      .then((result) => {
-        res.status(201).json({
-          message: "Product added successfully!",
-          userCreated: {
-            _id: result._id,
-            profileImg: result.profileImg,
-          },
-        });
-      })
-      .catch((err) => {
-        console.log(err),
-          res.status(500).json({
-            error: err,
-          });
-      });
+    // console.log(req.file);
+    // const url = req.protocol + "://" + req.get("host");
+    // const user = new Product({
+    //   name: req.body.name,
+    //   image: url + "/public/" + req.file.filename,
+    // });
+    // user
+    //   .save()
+    //   .then((result) => {
+    //     res.status(201).json({
+    //       message: "Product added successfully!",
+    //       userCreated: {
+    //         _id: result._id,
+    //         profileImg: result.profileImg,
+    //       },
+    //     });
+    //   })
+    //   .catch((err) => {
+    //     console.log(err),
+    //       res.status(500).json({
+    //         error: err,
+    //       });
+    //   });
   });
 
 // the is going to grab single student
