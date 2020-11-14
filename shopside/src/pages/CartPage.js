@@ -12,6 +12,26 @@ import Total from '../components/Total';
 
 const CartPage = ({}) => {
 
+    const cartStuff = [
+      {  name:"test",
+        image: 'img',
+        rating: 'test',
+        numReviews:'test',
+        salary: "test",
+        description:'test'
+    },
+    {  name:"test",
+        image: 'img',
+        rating: 'test',
+        numReviews:'test',
+        salary: "test",
+        description:'test'
+    }
+
+    ]
+
+
+
     const { cartItems, setCartItems } = useContext(cartContext);
     // same functionality from the homePage.js file, as I mimick.
         console.log('cartItems', cartItems);
