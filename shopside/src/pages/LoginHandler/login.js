@@ -11,8 +11,8 @@ import Context from '../../utils/context.js'
 
 function Login() {
   
-  const {userState, setState} = useContext(Context);
-  console.log(userState);
+  // const {userState, setState} = useContext(Context);
+  // console.log(userState);
   const [login, setLogin] = useState({
     email: '',
     password: ''
@@ -30,14 +30,10 @@ function Login() {
       console.log(data);
                   
       localStorage.setItem('loggedIn', data.data.loggedIn);
-      localStorage.setItem('admin', data.data.admin) 
+      localStorage.setItem('admin', data.data.admin); 
       console.log('logged in status', localStorage.getItem('loggedIn'));
-  
-    setState({
-      userStatus: data.data
-    })
+      window.location.replace('/');
   })
-    
   }
 
   const submitLogin = (e) =>{

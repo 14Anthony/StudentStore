@@ -75,7 +75,7 @@ const ProductPage = ({ match }) => {
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            <Button onClick = { () => setCartItems([...cartItems, product])} className='btn-block' type='button' disabled={product.countInStock === 0}>
+                            <Button onClick = { () => {setCartItems([...cartItems, product]); console.log(cartItems)}} className='btn-block' type='button' disabled={product.countInStock === 0}>
                                 Add To Cart
                             </Button>
                         </ListGroup.Item>

@@ -29,6 +29,7 @@ function SignUp() {
     console.log(userArr);
     API.addUser(userArr).then(()=>{
       localStorage.setItem('loggedIn', 'true');
+      window.location.replace('/');
     })
     
   }

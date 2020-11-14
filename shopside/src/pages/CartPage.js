@@ -10,15 +10,16 @@ import Total from '../components/Total';
 // import productPage from '../pages/productPage'
 
 
-const CartPage = ({ }) => {
+const CartPage = ({}) => {
 
     const { cartItems, setCartItems } = useContext(cartContext);
     // same functionality from the homePage.js file, as I mimick.
-
+        console.log('cartItems', cartItems);
     return (
         <>
             <Row>
                 {cartItems.map(product => (
+                    
                     <Col md={2}>
 
                         {/* the name keeps popping out of the cards....how do I fix.??? */}

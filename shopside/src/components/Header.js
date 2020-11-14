@@ -55,7 +55,6 @@ const Header = () => {
                                 localStorage.getItem('admin') === 'yes' ?
                                     <Nav.Link ><i className='fas fa-user'></i>Admin</Nav.Link> :
                                     <>
-
                                     </>
                             )}
                             </LinkContainer>

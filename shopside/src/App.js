@@ -12,10 +12,10 @@ import Signup from './pages/LoginHandler/signup'
 import cartContext from './utils/cartContext'
 // I deleted the HomePage tag, and imported route, given the path = "tosomepath"  it will render component={pulling in somecomponent}  then make sure you have "exact" path. if you are
 const App = () => {
-  const { userStatus } = useContext(Context);
+  // const { userStatus } = useContext(Context);
   const [cartItems, setCartItems] = useState([]);
 
-  console.log(Context.userStatus);
+  // console.log(Context.userStatus);
 
   return (
     <Router>
@@ -40,9 +40,9 @@ const App = () => {
           <Route
             path='/login'
             render= {() =>(
-            <Context.Provider>
-              <Login userStatus ={userStatus} />
-            </Context.Provider>
+            
+              <Login userStatus ={localStorage.getItem('loggedIn')} />
+           
             )}
              />
 
