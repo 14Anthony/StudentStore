@@ -10,6 +10,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd shopside && npm run start",
     "install": "cd shopside && npm install",
+    "build": "cd shopside && npm run build",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
     "heroku-postbuild": "npm run build"
