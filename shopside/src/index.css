@@ -1,3 +1,8 @@
 main {
   min-height: 88vh;
 }
+.fa {
+  padding-left: 5px;
+  padding-right: 5px;
+  text-shadow: 2px 2px 4px #000000;
+}

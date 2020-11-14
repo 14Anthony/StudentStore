@@ -23,7 +23,7 @@ const Header = () => {
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto">
+                        <Nav className="ml-auto align-items-end">
 
                             {/* fontawesome for the cart, and users */}
                             <p className="text-danger">{cartItems.length}</p>
@@ -40,7 +40,7 @@ const Header = () => {
                                     <Nav.Link onClick={() => {
                                         localStorage.setItem('loggedIn', '');
                                         localStorage.setItem('admin', '')
-                                        window.location.reload();
+                                        window.location.redirect();
                                     }}><i className="fas fa-user"></i>Sign Out</Nav.Link>
                                 </LinkContainer>
                                 :

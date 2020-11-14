@@ -21,12 +21,11 @@ const productSchema = mongoose.Schema(
 
     name: {
       type: String,
-      required: true,
+      // required: true,
     },
 
     image: {
       type: String,
-      required: false,
     },
 
     brand: {
@@ -48,7 +47,7 @@ const productSchema = mongoose.Schema(
     },
     salary: {
       type: Number,
-      required: false,
+      // required: true,
       defaut: 0,
     },
     countInStock: {

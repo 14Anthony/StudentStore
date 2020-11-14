@@ -9,20 +9,20 @@ function ProductList() {
   useEffect(() => {
     loadProducts();
   }, []);
-// console.log(products);
   // Loads all products and sets them to products
   function loadProducts() {
     productAPI
-      .getProducts()
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.log(err));
+    .getProducts()
+    .then((res) => setProducts(res.data))
+    .catch((err) => console.log(err));
   }
   function delProduct(id) {
     productAPI
-      .deleteProduct(id)
-      .then((res) => loadProducts(res.data))
-      .catch((err) => console.log(err));
+    .deleteProduct(id)
+    .then((res) => loadProducts(res.data))
+    .catch((err) => console.log(err));
   }
+  
   
   return (
     <div>
@@ -36,6 +36,7 @@ function ProductList() {
               <p>
                 -- {data.description} -- Price -- ${data.salary}
               </p>
+              <img src={`data:image/png;base64, ${data.image}`} alt="Red dot" />
               <DeleteBtn onClick={() => delProduct(data._id)} />
             </ListItem>
           );

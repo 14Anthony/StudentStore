@@ -1,15 +1,13 @@
 {
   "name": "studentstore",
-  "proxy": "http://127.0.0.1:8800",
   "version": "1.0.0",
   "description": "project three completing an react app, using authentication, MERN stack, and MVC modeling",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "client": "cd shopside && npm run start",
+    "install": "cd shopside && npm install",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
     "client-install": "npm install --prefix shopside",
@@ -31,12 +29,16 @@
   "homepage": "https://github.com/14Anthony/StudentStore#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "chart.js": "^2.9.4",
     "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
-    "mongoose": "^5.10.11"
+    "if-env": "^1.0.4",
+    "mongoose": "^5.10.11",
+    "multer": "^1.4.2",
+    "react-chartjs-2": "^2.11.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",

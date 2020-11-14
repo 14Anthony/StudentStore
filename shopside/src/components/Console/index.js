@@ -1,9 +1,8 @@
 import React from "react";
 import { Route, useRouteMatch } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import { AdminSideBar, UserSideBar } from "../../console_data/data";
+import { AdminSideBar } from "../../console_data/data";
 import "./style.css";
-
 
 function Resource({ match }) {
   const topic = AdminSideBar.find(({ id }) => id === match.params.topicId);
@@ -19,9 +18,9 @@ const Console = () => {
   // const [consoleObject, setconsoleObject] = useState({option: ""});
   return (
     // <div id="page-content-wrapper">
-      <Container fluid>
-        <Route path={`${path}/:topicId`} component={Resource} />
-      </Container>
+    <Container fluid>
+      <Route path={`${path}/:topicId`} component={Resource} />
+    </Container>
     // </div>
   );
 };
