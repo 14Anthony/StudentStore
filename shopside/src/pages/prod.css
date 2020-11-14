@@ -1,0 +1,24 @@
+.my-3{
+    border-style: groove;
+    border-color: rgb(120, 133, 136);
+    background-color: rgba(122, 122, 122, 0.753);
+    box-shadow: 3px 4px 8px 4px rgba(62, 67, 68, 0.897);
+    }
+
+
+.card-body{
+    background-color: rgba(166, 177, 180, 0.63);
+    
+}
+
+.list-group{
+    background-color: rgba(26, 28, 29, 0.63);
+    
+}
+.rating{
+    color: rgba(240, 216, 0, 0.842); 
+}
+
+.cart-total-value, .cart-total-label{
+    color: white;
+}

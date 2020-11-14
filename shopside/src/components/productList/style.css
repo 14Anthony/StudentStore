@@ -1,0 +1,22 @@
+h3{
+    float: right;
+    text-shadow: 0px 3px 5px #000000;
+}
+h1{
+    color: white;
+    text-shadow: 0px 3px 5px #000000;
+    background-color: rgba(77, 71, 70, 0.747);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.list-group{
+    background-color: rgba(26, 28, 29, 0.63);
+    text-shadow: 0px 3px 5px #000000;
+    
+}
+.card-body{
+    background-color: rgba(166, 177, 180, 0.63);
+    text-shadow: 0px 3px 5px #000000;
+    
+}
