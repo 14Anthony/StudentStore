@@ -6,39 +6,36 @@ const userRoutes = require("./backend/routes/userRoutes.js");
 const productRoutes = require("./backend/routes/productRoutes.js");
 const { notFound, errorHandler } = require("./backend/middleware/errorMid.js");
 const cors = require("cors");
-var bodyParser = require("body-parser");
-
-
+const PORT = process.env.PORT || 3001;
 const path = require('path');
+const mongoose = require("mongoose");
 dotenv.config();
-connectDB();
+
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("shopside/build"));
-  }
-
+app.use(express.static(path.join(__dirname, 'shopside/build')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
-// app.use(express.json());
-// app.get("/", (req, res) => {
-//   res.send("Backend Begins...");
-// });
+app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("shopside/build"));
+  }
+  // Add routes, both API and view
+  
+  app.use(cors());
+  app.use("/api/products", productRoutes);
+  app.use(userRoutes);
 
-app.use(cors());
-app.use("/api/products", productRoutes);
-app.use(userRoutes);
-// app.use(notFound);
-// app.use(errorHandler);
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/products");
 
-//const PORT = process.env.PORT || 8800;
-const PORT = process.env.PORT || 8800;
-app.listen(PORT);
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
 
 
 
