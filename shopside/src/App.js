@@ -67,6 +67,6 @@ const App = () => {
       </cartContext.Provider>
     </Router>
   );
-}
+};
 
 export default App;
