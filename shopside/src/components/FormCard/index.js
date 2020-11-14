@@ -3,7 +3,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import { Input, TextArea } from "../Form";
 import { Button, Form } from "react-bootstrap";
 import productAPI from "../../utils/productAPI.js";
-import FilesUploadComponent from "../FileUpload"
+import FilesUploadComponent from "../FileUpload";
 function FormCard() {
   const [formObject, setFormObject] = useState({});
   const [file, setFile] = useState("");
@@ -36,17 +36,20 @@ function FormCard() {
   function handleFormSubmit(event) {
     event.preventDefault();
     // setFile(event.target.files[0]);
-    const formData = new FormData();
-    formData.append("productImg", formObject.image);
+    // const formData = new FormData();
+    // formData.append("productImg", formObject.image);
     if (formObject.title && formObject.price) {
       productAPI
         .saveProduct({
           name: formObject.title,
           description: formObject.description,
           salary: formObject.price,
-          image: formObject.image,
+          image: "/Photos/default.png",
+          countInStock: 1,
+          rating: 1,
+          numReviews: 0,
         })
-        .then((res) => loadProducts())
+        .then((res) => loadProducts()).setFormObject({})
         .catch((err) => console.log(err));
     }
   }
@@ -70,17 +73,16 @@ function FormCard() {
   const ImageThumb = ({ image }) => {
     return (
       <img
-      name="image"
-      src={URL.createObjectURL(image)}
-      alt={image.name}
-      style={{ width: "200px" }}
+        name="image"
+        src={URL.createObjectURL(image)}
+        alt={image.name}
+        style={{ width: "200px" }}
       />
-      );
-    };
-    console.log(formObject);
-    return (
-      <Container fluid className="py-3">
-      
+    );
+  };
+  console.log(formObject);
+  return (
+    <Container fluid className="py-3">
       <Row>
         <Col size="md-6">
           <form action="/" method="POST" encType="multipart/form-data">
@@ -99,14 +101,14 @@ function FormCard() {
               name="price"
               placeholder="Price (required)"
             />
-            <Form.Group>
+            {/* <Form.Group>
               <div id="upload-box">
                 <input name="image" type="file" onChange={onFileChange} />
                 <p>File type: {file.type}</p>
                 <p>File size: {file.size} bytes</p>
                 {file && <ImageThumb name="image" image={file} />}
               </div>
-            </Form.Group>
+            </Form.Group> */}
 
             <Button
               className="mb-2"

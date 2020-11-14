@@ -5,8 +5,8 @@ import Sidebar from "../components/Sidebar";
 const AdminPage = () => {
   return (
     <div className="d-flex" id="wrapper">
-      <Sidebar />
       <Console />
+      <Sidebar />
 
     </div>
   );

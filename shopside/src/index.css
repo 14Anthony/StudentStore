@@ -6,3 +6,10 @@ main {
   padding-right: 5px;
   text-shadow: 2px 2px 4px #000000;
 }
+body {
+  background-image: url(./photos/il_1140xN.2433533679_f94m.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}

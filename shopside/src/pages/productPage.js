@@ -5,6 +5,7 @@ import Rating from '../components/Rating'
 // import products from '../products'
 import axios from 'axios'
 import cartContext from '../utils/cartContext'
+import "./prod.css"
 
 const ProductPage = ({ match }) => {
 

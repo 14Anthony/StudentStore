@@ -54,7 +54,7 @@ function Login() {
           <p> Password</p>
           <input type = "password" name = 'password' onChange= {onChange} ></input>
           </div>
-          <button className = "submit" onClick = {submitLogin}>Submit</button>
+          <button className = "btn btn-primary submit" onClick = {submitLogin}>Submit</button>
         </div>
         <div className = 'col login'>
           <div className = 'card login'>

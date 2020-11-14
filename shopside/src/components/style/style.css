@@ -1,0 +1,67 @@
+.card {
+  max-width: 400px;
+  height: 400px;
+}
+
+.card-body {
+  background-color: rgba(166, 177, 180, 0.63);
+ 
+}
+container {
+  align-items: center;
+  margin: auto;
+}
+h3 {
+  color: rgb(214, 214, 214);
+}
+.list-group-item {
+  background-color: rgba(166, 177, 180, 0.63);
+  
+  text-shadow: 0px 3px 5px #000000;
+  color: rgb(255, 255, 255);
+}
+.rating {
+  color: rgba(240, 216, 0, 0.842);
+}
+.product {
+  background-color: rgba(166, 177, 180, 0.63);
+  border-radius: 0 0 4px 4px;
+}
+.delete-btn {
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 3px 5px #000000;
+  font-size: 40px;
+  font-weight: 700;
+}
+.form-control::placeholder {
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 4px #b6b6b6;
+  font-weight: bolder;
+}
+.form-control {
+  background-color: rgba(166, 177, 180, 0.877);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: rgb(0, 0, 0);
+}
+
+#header {
+  text-align: center;
+  color: white;
+  background-color: rgba(77, 71, 70, 0.747);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {
+  object-fit: cover;
+  object-position: 100% 0;
+  width: 200px;
+  height: 200px;
+} /* .card-body{
+    background-color: rgba(166, 177, 180, 0.63);
+    border-radius: 0 0 10px 10px;
+} */
+
+
+.rating {
+  color: rgba(240, 216, 0, 0.842);
+}
