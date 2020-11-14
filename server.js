@@ -7,14 +7,7 @@ const productRoutes = require("./backend/routes/productRoutes.js");
 const { notFound, errorHandler } = require("./backend/middleware/errorMid.js");
 const cors = require("cors");
 var bodyParser = require("body-parser");
-// import express from "express";
-// import dotenv from "dotenv";
-// import connectDB from "./config/db.js";
-// import products from './DB/products.js'
-// import productRoutes from "./routes/productRoutes.js";
-// import userRoutes from "./routes/userRoutes.js";
-// import cors from '
-// import { notFound, errorHandler } from "./middleware/errorMid.js";
+
 
 const path = require('path');
 dotenv.config();
@@ -44,7 +37,7 @@ app.use(userRoutes);
 // app.use(errorHandler);
 
 //const PORT = process.env.PORT || 8800;
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8800;
 app.listen(PORT);
 
 
