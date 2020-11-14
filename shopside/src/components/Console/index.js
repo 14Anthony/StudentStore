@@ -18,7 +18,7 @@ const Console = () => {
   // const [consoleObject, setconsoleObject] = useState({option: ""});
   return (
     // <div id="page-content-wrapper">
-    <Container d-flex>
+    <Container>
       <Route path={`${path}/:topicId`} component={Resource} />
     </Container>
     // </div>
