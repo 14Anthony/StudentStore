@@ -1,7 +1,7 @@
 // import express from 'express'
 // import asyncHandler from 'express-async-handler'
 // import Product from '../models/productModel.js'
-const db = require('../models/userModel')
+// const db = require('../models/userModel')
 const express = require('express');
 const router = express.Router({mergeParams:true})
 const User = require('../../controllers/userControllers')

@@ -1,10 +1,11 @@
 import React from 'react'
+import Container from "react-bootstrap/Container"
 
 const CheckoutPage = () => {
     return (
-        <div>
+        <Container>
 
-        </div>
+        </Container>
     )
 }
 

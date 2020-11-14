@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "../../components/style/login.css"
 import API from '../../utils/API'
@@ -78,8 +77,8 @@ function SignUp() {
                :<p></p>)}
              
              </div>
+            <button className="btn btn-primary submit" onClick={addUser}>Submit</button>
             </div>
-            <button className="submit" onClick={addUser}>Submit</button>
           </div>
         </div>
 

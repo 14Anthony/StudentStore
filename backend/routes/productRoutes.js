@@ -44,31 +44,7 @@ router
     })
   )
   //Create a product
-  .post(upload.single("productImg"), (req, res, next) => {
-    // console.log(req.file);
-    // const url = req.protocol + "://" + req.get("host");
-    // const user = new Product({
-    //   name: req.body.name,
-    //   image: url + "/public/" + req.file.filename,
-    // });
-    // user
-    //   .save()
-    //   .then((result) => {
-    //     res.status(201).json({
-    //       message: "Product added successfully!",
-    //       userCreated: {
-    //         _id: result._id,
-    //         profileImg: result.profileImg,
-    //       },
-    //     });
-    //   })
-    //   .catch((err) => {
-    //     console.log(err),
-    //       res.status(500).json({
-    //         error: err,
-    //       });
-    //   });
-  });
+  .post(productController.create);
 
 // the is going to grab single student
 //  GET to /api/products/:id

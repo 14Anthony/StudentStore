@@ -1,10 +1,48 @@
-.login{
-    border-style: solid;
-    border-color: gray;
-    margin: 10px;
-    padding : 10px;
+.login {
+  border-style: solid;
+  border-color: rgb(56, 56, 56);
+  margin: 10px;
+  padding: 10px;
 }
 
-.card{
-    border-style: none;
+.card {
+  border-style: none;
+  background-color: rgba(49, 51, 51, 0.87);
+  border-radius: 0;
+  text-shadow: 0px 3px 5px #000000;
+  color: rgb(255, 255, 255);
+}
+
+#click-here{
+    position: relative;
+    top: 70px;
+}
+.bogus{
+    color: rgb(199, 158, 22);
+    font-size: 20px;
+    
+}
+/* .{
+  background-color: rgba(92, 22, 22, 0);
+  border-radius: 0 0 10px 10px;
+  
+} */
+
+#signup{
+    font-size: 20px;
+    color: rgba(240, 216, 0, 0.842);
+}
+
+#password{
+    margin-bottom: 20px;
+}
+
+#btn-primary{
+position: relative;
+bottom: -150px;
+}
+
+.login{
+    margin: auto;
+    padding-right: 10px;
 }

@@ -40,7 +40,7 @@ const Header = () => {
                                     <Nav.Link onClick={() => {
                                         localStorage.setItem('loggedIn', '');
                                         localStorage.setItem('admin', '')
-                                        window.location.redirect();
+                                        window.location.replace("/");
                                     }}><i className="fas fa-user"></i>Sign Out</Nav.Link>
                                 </LinkContainer>
                                 :
@@ -51,7 +51,7 @@ const Header = () => {
                             )}
 
 
-                            <LinkContainer to='/ADMIN'>{(
+                            <LinkContainer to='/ADMIN/4'>{(
                                 localStorage.getItem('admin') === 'yes' ?
                                     <Nav.Link ><i className='fas fa-user'></i>Admin</Nav.Link> :
                                     <>

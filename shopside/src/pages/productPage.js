@@ -5,6 +5,7 @@ import Rating from '../components/Rating'
 // import products from '../products'
 import axios from 'axios'
 import cartContext from '../utils/cartContext'
+import "./prod.css"
 
 const ProductPage = ({ match }) => {
 
@@ -30,9 +31,10 @@ const ProductPage = ({ match }) => {
         </Link>
             {/* I need to pull in the image, and the product information using the current list from products.js */}
             <Row>
-                <Col md={6}>
+                <Col md={3}></Col>
+                <Col md={3}>
                     {/* the name keeps popping out of the cards....how do I fix.??? */}
-                    <Image src={product.image} alt={product.name} fluid />
+                    <Image id="bigger" src={product.image} alt={product.name} fluid />
 
                 </Col>
                 <Col md={3}>

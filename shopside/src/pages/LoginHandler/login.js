@@ -52,17 +52,18 @@ function Login() {
           <p>Email</p>
           <input name = 'email' onChange={onChange}></input>
           <p> Password</p>
-          <input type = "password" name = 'password' onChange= {onChange} ></input>
+          <input id="password" type = "password" name = 'password' onChange= {onChange} ></input>
+          
+          <button id="btn-primary" className = "btn btn-primary submit" onClick = {submitLogin}>Submit</button>
           </div>
-          <button className = "submit" onClick = {submitLogin}>Submit</button>
         </div>
         <div className = 'col login'>
           <div className = 'card login'>
             <div className = 'card-body'>
-              <div className = 'card-title'>
+              <div id="click-here"  className = 'bogus card-title'>
 
-              <LinkContainer to='/signup'>
-                                <Nav.Link ><i className='fas fa-user'></i>Click Here If You Need To Create A User</Nav.Link>
+              <LinkContainer className="bogus" to='/signup'>
+                                <Nav.Link ><i className='fas fa-user'></i> Click Here To Create A User</Nav.Link>
               </LinkContainer>
         
               </div>

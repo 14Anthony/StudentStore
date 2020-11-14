@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import { List, ListItem } from "../../components/List";
 import productAPI from "../../utils/productAPI.js";
+import "../style/style.css" 
+import "./style.css"
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -36,7 +38,7 @@ function ProductList() {
               <p>
                 -- {data.description} -- Price -- ${data.salary}
               </p>
-              <img src={`data:image/png;base64, ${data.image}`} alt="Red dot" />
+              <img src={data.image} alt={data.name} />
               <DeleteBtn onClick={() => delProduct(data._id)} />
             </ListItem>
           );
