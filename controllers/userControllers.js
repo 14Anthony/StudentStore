@@ -10,9 +10,12 @@ module.exports = {
     db
       .find({email: email})
       .then(data => {
-        console.log('promise data', data[0].isAdmin);
+        console.log('promise data', data);
         if(data.length === 0 ){
-          res.send(false)
+          res.send('not found')
+        }
+        if(data[0].password !== pswd){
+          res.send('401')
         }
         else{
           res.json({

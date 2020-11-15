@@ -27,12 +27,17 @@ function Login() {
   const checkUser=(input)=>{
     console.log('clicked');
     API.getUser(login.email, login.password).then((data)=>{
-      console.log(data);
-                  
+      console.log('response from front', data.data);
+      if(data.data === 401){
+          alert('incorrect password')
+      }
+      if(data.data !== 401){
       localStorage.setItem('loggedIn', data.data.loggedIn);
       localStorage.setItem('admin', data.data.admin); 
       console.log('logged in status', localStorage.getItem('loggedIn'));
       window.location.replace('/');
+      alert('login success');
+      }
   })
   }
 
